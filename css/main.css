@@ -44,21 +44,24 @@ body {
 	margin: 0px;
 }
 
-.section {
-	margin: 20px;
-    padding: 20px;
-    width: 40%;
+.section-wrapper {
+	width:49%;
     display: inline-grid;
-    border: 1px solid #ffffff;
+    
+}
+.section {
+	border: 1px solid #ffffff;	
+	margin: 30px;
+    padding: 30px;
 }
 
 @media screen and (max-width: 500px){
-	.section {
+	.section-wrapper {
     	margin: 20px;
     	padding: 20px;
     	width: 80%;
     	display: block;
-    	border: 1px solid #ffffff;
+    	/*border: 1px solid #ffffff;*/
 	}
 }
 
