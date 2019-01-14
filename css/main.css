@@ -82,6 +82,18 @@ body {
 	margin:5px 0 0 5px;
 }
 
+.bg_scroll {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/dd_dog.JPG);
+    background-position: 0px 0px;
+    background-size: cover;
+}
+
 footer {
 	text-align: center;
 	margin-bottom: 10px;
