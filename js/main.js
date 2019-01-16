@@ -46,9 +46,10 @@ $(function () {
 	$('#openModal8').click(function(){
 	    $('#modalArea8').fadeIn();
   	});
-  	// $('#closeModal , #modalBg').click(function(){
-  	// $('#modalArea').fadeOut();
-  	// });
+
+  	$('#closeModal , #modalBg').click(function(){
+  	$('.modalArea').fadeOut();
+  	});
 });
 
 
