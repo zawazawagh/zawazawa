@@ -138,10 +138,12 @@ footer {
   top: 50%;
   left: 50%;
   transform:translate(-50%,-50%);
-  width: 70%;
-  max-width: 500px;
+  width: 80%;
+  max-width: 900px;
   padding: 10px 30px;
   background-color: #969696;
+  height : 50%; /*お好みの高さで固定*/
+  overflow : auto; /*状況に応じて縦スクロールバーが出現*/
 }
 
 .closeModal {
