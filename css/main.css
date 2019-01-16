@@ -52,11 +52,15 @@ body {
     display: inline-grid;
     
 }
-.section {
+.section, .work{
 	border: 1px solid #ffffff;	
 	margin: 30px;
     padding: 30px;
     background-color: #3e3e3ee6;
+}
+
+.work .content img {
+	width:100%;
 }
 
 .title {
@@ -104,4 +108,78 @@ footer {
     	width: 100%;
     	display: block;
 	}
+}
+
+
+
+
+
+
+
+/* モーダルCSS */
+.modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10; /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 70%;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: #969696;
+}
+
+.closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+
+/* 以下ボタンスタイル */
+button {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #282828;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.openModal {
+  color: #caabab;
+  word-wrap: break-word;
+  -webkit-transition: ease 0.4s;
+  -moz-transition: ease 0.4s;
+  -ms-transition: ease 0.4s;
+  -o-transition: ease 0.4s;
+  transition: ease 0.4s;
+}
+.openModal:hover, .openModal:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  outline: 0;
+  color: gainsboro;
+}
+.openModal:before, .openModal:after {
+  -webkit-transition: ease 0.4s;
+  -moz-transition: ease 0.4s;
+  -ms-transition: ease 0.4s;
+  -o-transition: ease 0.4s;
+  transition: ease 0.4s;
 }

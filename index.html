@@ -34,23 +34,44 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
   </head>
   <body>
-    <header>
+    <div id="header"></div>
 
-    </header>
-    <main>
-      <div class="bg_scroll"></div>
-
+<!--     <header>
       <div class="title">
         <strong>Hope human life in XR</strong>
       </div> 
-      
+      <div class="bg_scroll"></div>
+    </header> -->
+
+<!-- <button id="openModal0">Open modal</button> -->
+<!-- <button id="openModal1">Open modal</button> -->
+
+<!-- モーダルエリアここから -->
+<section id="modalArea" class="modalArea">
+  <div id="modalBg" class="modalBg"></div>
+  <div class="modalWrapper">
+    <div class="modalContents">
+      <h1>Here are modal contents!</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    </div>
+    <div id="closeModal" class="closeModal">
+      ×
+    </div>
+  </div>
+</section>
+<!-- モーダルエリアここまで -->
+
+
+
+
+    <main>
       <div class="section-wrapper">
           <div class="section"> 
           <h1>Profile</h1>
           <div class="content profile">
             <img src="img/waiyade.png" alt="プロフィール写真" title="プロフィール写真">
             <div class="name">小沢健悟</div>
-            <div class="belonging">東京大学 学際情報学府 学際情報学専攻 先端表現情報学コース 小川研究室</div>
+            <div class="belonging">東京大学 学際情報学府 学際情報学専攻 先端表現情報学コース 小川研究室 修士1年</div>
             <div class="sns-link">
               <a href="https://twitter.com/zawazawatw" target="_blank"><i class="fab fa-twitter"></i></a>
               <a href="https://www.facebook.com/kengo.ozw" target="_blank"><i class="fab fa-facebook-square"></i></a>
@@ -119,13 +140,14 @@
         <div class="section">
           <h1>Works</h1>
           <div class="content">
-            <a href="">卒業論文</a>
-            <br><a href="">MIT-SDM訪問</a>
-            <br><a href="">GRot the hand(東京大学制作展extra)</a>
-            <br><a href="">VRPianoVisualizer+(東京大学制作展)</a>
-            <br><a href="works/ARPet.html">ARPet</a>
-            <br><a href="">Pianist-Finger-Agent</a>
-            <br><a href="">Segmented Human VFX</a>
+            <!-- <a href="works/grad_thesis.html">GMCNF</a> -->
+            <div class="openModal" id="openModal0">GMCNF</div>
+            <div class="openModal" id="openModal1">MIT-SDM訪問</div>
+            <div class="openModal" id="openModal">GRot the hand(東京大学制作展extra)</div>
+            <div class="openModal" id="openModal">VRPianoVisualizer+(東京大学制作展)</div>
+            <div class="openModal" id="openModal">ARPet</div>
+            <div class="openModal" id="openModal">Pianist-Finger-Agent</div>
+            <div class="openModal" id="openModal">Segmented Human VFX</div>
           </div>
         </div>
       </div>
@@ -155,5 +177,7 @@
     <footer>
 Kengo Ozawa 2018, All Right Reserved.
     </footer>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>
