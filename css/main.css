@@ -81,6 +81,20 @@ body {
 	width:100%;
 }
 
+.works {
+	text-align:center;
+	font-size: 5vh;
+}
+
+.work-wrapper {
+	width: 24.3%;
+    display: inline-grid;
+	border:1px solid #ffffff;
+	margin: 20px 30px;
+	padding:20px 30px;
+	background-color: #3e3e3ee6;
+}
+
 .sns-link {
 	font-size: 20px;
 	margin:5px 0 0 5px;
@@ -107,6 +121,16 @@ footer {
 	.section-wrapper {
     	width: 100%;
     	display: block;
+	}
+
+	.work-wrapper {
+		width: 100%;
+		max-width:300px;
+    	display: inline-grid;
+		border:1px solid #ffffff;
+		margin: 20px 30px;
+		padding:20px 30px;
+		background-color: #3e3e3ee6;
 	}
 }
 
