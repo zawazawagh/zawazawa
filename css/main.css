@@ -82,8 +82,24 @@ body {
 }
 
 .works {
+	position: relative;
 	text-align:center;
 	font-size: 5vh;
+}
+
+.works .works-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+}
+
+.works img{
+	width: 100%;
 }
 
 .work-wrapper {
@@ -93,6 +109,12 @@ body {
 	margin: 20px 30px;
 	padding:20px 30px;
 	background-color: #3e3e3ee6;
+}
+
+.work-wrapper img {
+	width:100%;
+	max-height: 204px;
+	object-fit: scale-down;
 }
 
 .sns-link {
@@ -126,7 +148,7 @@ footer {
 	.work-wrapper {
 		width: 100%;
 		max-width:300px;
-    	display: inline-grid;
+    	display: block;
 		border:1px solid #ffffff;
 		margin: 20px 30px;
 		padding:20px 30px;
@@ -196,6 +218,8 @@ button {
 }
 
 .openModal {
+  font-weight:bold;
+  margin-bottom:10px;
   color: #caabab;
   word-wrap: break-word;
   -webkit-transition: ease 0.4s;
