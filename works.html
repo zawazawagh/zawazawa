@@ -23,7 +23,10 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="shortcut icon" href="img/favicon.png">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" media="screen" />
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
     <style type="text/css"></style>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -39,61 +42,65 @@
     <div id="header"></div>
     <main>
 
+    <button class="ero-button">    </button>
+
       <div class="work-wrapper">
         <div class="openModal" id="openModal6">
-            Pianist-Finger-Agent
+            <h4>Pianist-Finger-Agent</h4>
             <img src="img/mlagents.png">
         </div>
       </div>
 
       <div class="work-wrapper">
         <div class="openModal" id="openModal7">
-            Segmented Human VFX
+            <h4>Segmented Human VFX</h4>
             <img src="img/RTSS_SS.png">
         </div>
-        
       </div>
 
       <div class="work-wrapper">
         <div class="openModal" id="openModal4">
-            VRPianoVisualizer+(東京大学制作展)
+            <h4>VRPianoVisualizer+</h4>
             <img src="img/VRPV+.jpg">
         </div>
-        
       </div>
 
 
       <div class="work-wrapper">
         <div class="openModal" id="openModal5">
-            ARPet
+            <h4>ARPet</h4>
             <img src="img/arpet_screenshot.png">
         </div>
-        
       </div>
 
+      <div class="work-wrapper" id="ero" style="display: none;">
+        <div class="openModal" id="openModal8">
+            <h4>Proposal of Outdoor–Exposure experience using 3D character</h4>
+            <img src="img/shikan.png">
+        </div>
+      </div>
 
       <div class="work-wrapper">
         <div class="openModal" id="openModal3">
-            GRot the hand(東京大学制作展extra)
+            <h4>GRot the hand</h4>
             <img src="img/GRotthehand2.png">
         </div>
-        
       </div>
 
-
+    
       <div class="work-wrapper">
         <div class="openModal" id="openModal2">
-            MIT-SDM訪問
+            <h4>MIT-SDM訪問</h4>
+            <img src="img/MIT.jpg">
         </div>
       </div>
 
 
       <div class="work-wrapper">
         <div class="openModal" id="openModal1">
-            GMCNF
+            <h4>GMCNF</h4>
             <img src="img/gmcnf_casestudy.png">
         </div>
-        
       </div>
 
     </main>
@@ -103,10 +110,14 @@
   <div id="modalBg" class="modalBg"></div>
   <div class="modalWrapper">
     <div class="modalContents">
-      <h1>GMCNF</h1>
+      <h1>Generalized Multi Commodity Network Flow problem(一般化多品種フロー問題)</h1>
+        <h2>Images</h2>
         <img src="img/gmcnf_abst.png" alt="" title="" style="background-color: white;" id="width5"></img>        
         <img src="img/gmcnf_casestudy.png" alt="" title="" id="width3"></img>
-        <br>Generalized Multi Commodity Network Flow problem（卒業論文にて実装）
+        <h2>Description</h2>
+            卒業論文に実装。
+            <br>IMOにより、2020年から船舶のSOx排出量規制が強化される.これに対して有効な手段は、規制適合燃料油（MGO）を使用する、C重油(HFO)の排出ガスからSOx成分を除去するスクラバを船舶に搭載する、液化天然ガス（LNG）などの代替燃料を用いる、など3つがある.船会社は、これらの長所と短所を踏まえた上で、MGO燃料船、スクラバ搭載船、LNG燃料船の割合を航路毎に意思決定する必要がある.また、LNG燃料船を使用する際には、同時にLNG供給インフラの建設場所についても意思決定する必要がある.しかし、船舶による海上輸送網は複雑であり、LNG供給インフラ建設および各燃料船導入が、輸送網全体に与える影響を評価することは難しい.特に、供給インフラ建設は、航路自体を変更する可能性があり、評価のためにはインフラに合わせて変化する航路の評価が必要となる.
+            <br>本研究では、船会社がLNGを船舶燃料として利用するために、LNG供給インフラの建設場所に応じた最適な燃料の異なる船舶ごとの運航割合（運用コンセプト）とその運用コストを算出する手法を提案する.具体的には、LNG供給インフラの建設場所を含めた海上輸送網をINFINITモデルによって表現し、燃料、船舶、貨物の流れを運用コストに基づいて最適化する.その結果、最適な運用コンセプトとその運用コストが算出される.ケーススタディとして、自動車運搬船の物流に提案手法を適用し、LNG供給インフラ建設の組み合わせ4通り、使用する燃料の組み合わせ7通り、合計28通りについて最適な運用コンセプトとその運用コストを算出した.結果として、LNG供給インフラの建設場所によらず、LNGとHFO、もしくは3種類の燃料を使用する場合の運用コストが最も少ないことが示された．両方の場合で、LNG、HFOのみ運用されており、この2種類の組み合わせで最も低い運用コストを実現することができた．インフラ建設場所については、日本とシンガポールを比較すると、シンガポールに建設した場合、より運用コストを低減できることが示された．また、シンガポールに加えて日本に建設した場合は、運用コストに対して影響がないことも示された．ケーススタディの結果から、提案手法によって船会社がLNG燃料船を導入するか、LNG供給インフラ建設を行うか、の意思決定に必要な情報を定量的に算出できることを示した.
     </div>
     <div id="closeModal" class="closeModal">
       ×
@@ -119,7 +130,15 @@
   <div class="modalWrapper">
     <div class="modalContents">
       <h1>MIT-SDM訪問</h1>
-      
+      <h2>Pictures</h2>
+      <div class="carousel">
+        <li><img src="img/MIT.jpg" style="width:300px;"></li>
+        <li><img src="img/MIT.jpg" style="width:300px;"></li>
+        <li><img src="img/MIT.jpg" style="width:300px;"></li>
+        <li><img src="img/MIT.jpg" style="width:300px;"></li>
+      </div>
+      <h2>Description</h2>
+      <a href="https://is.edu.k.u-tokyo.ac.jp/top-japanese">学部時代の研究室</a>と同じ分野を研究するMITのSDMの学生(といってもほぼ社会人)との交流&自身の卒業論文の発表のため1週間ほどボストンに滞在。
     </div>
     <div id="closeModal" class="closeModal">
       ×
@@ -132,7 +151,31 @@
   <div class="modalWrapper">
     <div class="modalContents">
       <h1>GRot the hand(東京大学制作展extra)</h1>
+      <h2>Movie</h2>
+      <div class="movie">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/VClDLX14F8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Caption</h2>
+        人間の手は不思議だ。
+        <br>意識の内部にありつつ限りなく身体的外部に近い存在である。
+        <br>もしも自分の手が植物と融合したり機械の手になって目の前に現れてきたら、私たちの感情には何かしらの変化が生じるだろう。
+        <br>
+        <br>テクノロジーは不思議だ。
+        <br>私たちの手によって生み出されたものでありながら、時に私たちの理解を超える。
+        <br>この先テクノロジーはこのまま発展するのか、それとも限界を迎えて崩壊するのか、私たちは予想もできない。
+        <br>
+        <br>この先私たちはどのような時代を経験するだろうか。
+        <br>果たしてテクノロジーはどのように変容するだろうか。
+        <br>
+        <br>Grow or Rot ??
+        <br>
+        <br>この作品では、私たちの手がどのような変貌を遂げるのかを表現しました。
+      <h2>Description</h2>
+        Leapmotionによりハンドトラッキングされディスプレイに映し出された自分の手が、植物や機械など様々な概念と融合し変容する姿を見せ、人間の身体の境界を曖昧に見える作品。奥が見えない箱に手を伸ばし、箱の中を模した映像をディスプレイに映すことにより、HMDを使わずとも自己所有感や自己主体感を高めた。
+
       <br>共同制作者：<a href="https://sunagimon.github.io/" target="_blank">宇川拓人</a>
+      <br>
+      <br><a href="http://iiiexhibition.com/log/iiiEx2018/">東京大学制作展 Extra “Dest-logy”</a>
     </div>
     <div id="closeModal" class="closeModal">
       ×
@@ -145,7 +188,25 @@
   <div class="modalWrapper">
     <div class="modalContents">
       <h1>VRPianoVisualizer+(東京大学制作展)</h1>
-      
+      <h2>Movie</h2>
+      <div class="movie">
+        WIP
+      </div>
+      <h2>Caption</h2>
+      ピアノ、弾いてみますか？
+      <br>「ピアノ習ったことなくて……」
+      <br>「もう何年も触ってないから……」
+      <br>「音感とかリズム感とか全然ないので……」
+      <br>それなら、音が視える世界を覗いてみましょう。
+      <br>ピアノの音を鳴らし、聴いて・視て・遊んでみてください。
+      <br>自分の好きな音の並びを見つけた時、きっとあなたの音楽はそこに響いています。
+      <br>この静かな宇宙のどこかで、あなたの音楽を待っている人に向けて……。
+      <h2>Description</h2>
+      HMDを被ると宇宙空間が広がっており、鍵盤を叩くと音が光の玉になって周囲を回転しながら徐々に半径を広げていき、美しい没入空間を作り出す。また演奏者と対の立ち位置としてOculusGoを被った観客を登場させ、複数人でVR空間を共有する体験も可能。
+      <br>共同制作者：たか友康 宮下珠実
+      <br>
+      <br><a href="http://www.iiiexhibition.com/">東京大学制作展 “Dest-logy” REBUILD</a>
+      <br><a href="https://vrtokyo.connpass.com/event/107543/">xR Tech Tokyo #13 @ メルカリ</a>
     </div>
     <div id="closeModal" class="closeModal">
       ×
@@ -158,7 +219,14 @@
   <div class="modalWrapper">
     <div class="modalContents">
       <h1>ARPet</h1>
+      <h2>Movie</h2>
+      <div class="movie">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/sLnO8stGXP8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Description</h2>
+        ペットが飼えない人、寂しい一人暮らしの人、お年寄りに向けたアプリで、ARで現実世界にペットを登場させる。複数人でのAR体験の共有や、ペットの住環境いの保存を実現するために、当時ベータ版であったARKit2.0の端末同期・状態保存を利用して実装。
+        <br>
+        <br>株式会社メルカリ R4D XRチーム サマーインターンにて作成
     </div>
     <div id="closeModal" class="closeModal">
       ×
@@ -171,7 +239,15 @@
   <div class="modalWrapper">
     <div class="modalContents">
       <h1>Pianist-Finger-Agent</h1>
-      WIP
+      <h2>Movie</h2>
+      <div class="movie">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Bqdc4GP_Ucs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Description</h2>
+        多関節ハンド型エージェントによるピアノ演奏の自動モーション生成を行った。VTuberなどのアバターがピアノを弾くという需要が存在するが、この手法を用いるとn本腕m本指のアバターであってもモーションキャプチャを必要とせず、アニメーションの生成を行うことができる。
+        <br>Unity ML-Agentsを用いて実装された。
+        <br>
+        <br>東京大学大学院 情報理工学系研究科 先端人工知能論2 にて<a href="works/pianist-finger-agents.pdf">ポスター発表</a>
     </div>
     <div id="closeModal" class="closeModal">
       ×
@@ -184,7 +260,38 @@
   <div class="modalWrapper">
     <div class="modalContents">
       <h1>Segmented Human VFX</h1>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/M0NwcpKjsJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h2>Movie</h2>
+      <div class="movie">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/M0NwcpKjsJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Description</h2>
+        物体領域抽出のアプリケーションとして開発。カメラで人の領域をリアルタイムに抽出し(矩形検出ではない)、それをマスクとして利用することで様々なビジュアルエフェクトを適用させる。全5種類のエフェクトを作成したうち、個人的なお気に入りは光学シースルーのようなエフェクト。
+        <br>
+        <br>株式会社メルカリ R4D XRチームでのインターンにて作成
+    </div>
+    <div id="closeModal" class="closeModal">
+      ×
+    </div>
+  </div>
+</section>
+
+<section id="modalArea8" class="modalArea">
+  <div id="modalBg" class="modalBg"></div>
+  <div class="modalWrapper">
+    <div class="modalContents">
+      <h1>Proposal of Outdoor–Exposure experience using 3D character
+        <br>3D キャラを用いたリアルワールドベースの 野外露出体験システムの提案
+      </h1>
+      <h2>Movie</h2>
+      <div class="movie">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UK-RhxK-rC8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fLgRrp16L-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nw3Is_6Acfc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Description</h2>
+これは野外露出癖のある人が安心安全に性的趣向を満たすためのシステムである(と同時に本システムを女性に体験させて興奮するところを視姦できるようにするためのものである)。モーションキャプチャ技術により自身の動きを投影する3Dアバターを、現実の映像の上に重畳させた状態で、裸に剥くことでこれを実現する。パターンとして、2D映像に3Dアバターを重ね第三者視点で視姦する方法、球面に360度映像を投影し第三者視点で視姦する方法、球面に360度映像を投影しアバターからの目線で主観で視姦する方法の3つを実装した。
+        <br>
+        <br>東京大学大学院 学際情報学府 メディア情報学 にて<a href="works/outdoor-exposure.pdf">発表</a>
     </div>
     <div id="closeModal" class="closeModal">
       ×
@@ -195,6 +302,7 @@
 <!-- モーダルウィンドウの中身終わり -->
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
   </body>
 
 </html>

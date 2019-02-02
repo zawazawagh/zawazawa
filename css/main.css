@@ -35,16 +35,11 @@ body {
   font-family: 'Montserrat', "Noto Sans JP";
   font-weight: 400;
   font-size: 14px;
-  /*color: gainsboro;*/
   color:#ffffff;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
   position: relative;
-  /*top: 80px;*/
-}
-
-body {
-	margin: 0px;
+  margin: 0px;
 }
 
 .section-wrapper {
@@ -79,6 +74,7 @@ body {
 
 .profile img {
 	width:100%;
+	max-width:250px;
 }
 
 .works {
@@ -140,26 +136,53 @@ footer {
 }
 
 @media screen and (max-width: 500px){
+	body {
+		text-align:center;
+		background-color: #232323;
+  		background-image: url("../img/dd_dog.JPG");
+  		background-size: contain;
+  		font-family: 'Montserrat', "Noto Sans JP";
+  		font-weight: 400;
+  		font-size: 14px;
+  		color:#ffffff;
+  		-webkit-font-smoothing: antialiased;
+  		-webkit-overflow-scrolling: touch;
+  		position: relative;
+  		margin: 0px;
+	}
+
+	body .title {
+		margin-bottom: 2em;
+	}
+
 	.section-wrapper {
     	width: 100%;
     	display: block;
 	}
 
+	.section {
+		margin: 10px 10px;
+		padding:20px 20px;
+	}
+
 	.work-wrapper {
-		width: 100%;
-		max-width:300px;
-    	display: block;
+		width: 81%;
+		/*max-width: 300px;*/
+		display: -webkit-inline-box;
 		border:1px solid #ffffff;
-		margin: 20px 30px;
-		padding:20px 30px;
+		margin: 10px 10px;
+		padding:20px 20px;
 		background-color: #3e3e3ee6;
 	}
+
+	.modalContents iframe {
+		width:100%;
+	}
+
+	.openModal{
+		width:100%;
+	}
 }
-
-
-
-
-
 
 
 /* モーダルCSS */
@@ -192,12 +215,24 @@ footer {
   top: 50%;
   left: 50%;
   transform:translate(-50%,-50%);
-  width: 80%;
+  width: 100%;
   max-width: 900px;
-  padding: 10px 30px 30px 30px;
+  padding: 10px;
   background-color: #969696;
-  height : 50%; /*お好みの高さで固定*/
+  height : 90%; /*お好みの高さで固定*/
   overflow : auto; /*状況に応じて縦スクロールバーが出現*/
+}
+
+.modalContents{
+	padding:10px 10px 30px 10px;
+}
+
+.modalContents h1{
+	margin-bottom:2em;
+}
+
+.modalContents .movie {
+	text-align: center;
 }
 
 .closeModal {
@@ -205,6 +240,7 @@ footer {
   top: 0.5rem;
   right: 1rem;
   cursor: pointer;
+  font-size:2rem;
 }
 
 
@@ -241,3 +277,37 @@ button {
   -o-transition: ease 0.4s;
   transition: ease 0.4s;
 }
+
+.ero-button {
+	top:0px;
+	position: absolute;
+	border: none;
+	opacity: 0.1;
+}
+
+/*カルーセル用*/
+/*左右の矢印の色を変える*/
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+}
+/*左右の矢印の位置を変える*/
+.slick-next {
+    right: 40px;
+    z-index: 99;
+}
+.slick-prev {
+     left: 40px;
+    z-index: 100;
+}
+/*スライド数のドットの色を変える*/
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+    color: #fff;
+}
+/*スライド画像の横幅可変*/
+/*img {
+    max-width: 100%;
+     height: auto;
+}*/
+/*カルーセル終わり*/
