@@ -89,7 +89,44 @@ $(function () {
 });
 
 $(function() {
+	var $slider_container = $('.slider-container')
+	// $slider = $('.slider');
+
 	$('.carousel').slick({
+		// FontAwesomeのクラスを追加
+		// appendArrows: $slider_container,
+  // 		prevArrow: '<div class="slider-arrow slider-prev fa fa-angle-left"></div>',
+  // 		nextArrow: '<div class="slider-arrow slider-next fa fa-angle-right"></div>',
+
+  		infinite: true,
+  		slidesToShow: 2,
+  		// slidesToScroll: 1,
+  		// // autoplay: true,
+  		centerMode:true,
+  		centerPadding: '40px',
+  		dots:true,
+  		variableWidth: true,
+  		adaptiveHeight: true,
+  		responsive: [
+  		  {
+  		    breakpoint: 768,
+  		    settings: {
+  		      arrows: false,
+  		      centerMode: true,
+  		      centerPadding: '40px',
+  		      slidesToShow: 3
+  		    }
+  		  },
+  		  {
+  		    breakpoint: 480,
+  		    settings: {
+  		      arrows: false,
+  		      centerMode: true,
+  		      centerPadding: '40px',
+  		      slidesToShow: 1
+  		    }
+  		  }
+  		]
 	});
 });
 
