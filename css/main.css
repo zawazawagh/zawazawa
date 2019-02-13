@@ -306,6 +306,17 @@ button {
 	display: flex;
 }
 
+.styly-wrapper {
+  width: 100%;
+  text-align: center;
+  margin:30px 0px;
+}
+
+.styly-wrapper iframe {
+  width: 1280px;
+  height:720px;
+}
+
 @media screen and (min-width: 500px){
 	/*カルーセル用*/
 	/*左右の矢印の色を変える*/
