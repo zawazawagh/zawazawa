@@ -68,6 +68,10 @@ body {
 	margin-left: 20px;
 }
 
+.content a .pdf-link i{
+  font-size:100px;
+}
+
 .profile {
 	/*display: table-caption;*/
 }
@@ -129,6 +133,8 @@ body {
     background-position: 0px 0px;
     background-size: cover;
 }
+
+
 
 footer {
 	text-align: center;
