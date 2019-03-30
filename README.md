@@ -1,2 +1,2 @@
 # zawazawa
-https://kengorou2014.github.io/zawazawa/
+https://zawazawagh.github.io/zawazawa/
