@@ -42,6 +42,17 @@ body {
   margin: 0px;
 }
 
+header .title a{
+  color: #ffffff;
+  text-decoration: none;
+  word-wrap: break-word;
+  -webkit-transition: ease 0.4s;
+  -moz-transition: ease 0.4s;
+  -ms-transition: ease 0.4s;
+  -o-transition: ease 0.4s;
+  transition: ease 0.4s;
+}
+
 .section-wrapper {
 	width:49%;
     display: inline-block;
