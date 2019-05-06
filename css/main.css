@@ -96,6 +96,7 @@ header .title a, side-menu .side-menu a{
 .profile img {
 	width:100%;
 	max-width:250px;
+  object-fit: contain;
 }
 
 .profile .right-contents {
