@@ -42,7 +42,13 @@ body {
   margin: 0px;
 }
 
-header .title a{
+main-top {
+  width: 70%;
+  float: right;
+  margin-left: 30%;
+}
+
+header .title a, side-menu .side-menu a{
   color: #ffffff;
   text-decoration: none;
   word-wrap: break-word;
@@ -54,12 +60,12 @@ header .title a{
 }
 
 .section-wrapper {
-	width:49%;
-    display: inline-block;
-    
+	width:100%;
+    /* display: inline-block; */
+
 }
 .section, .work{
-	border: 1px solid #ffffff;	
+	border: 1px solid #ffffff;
 	margin: 30px;
     padding: 30px;
     background-color: #3e3e3ee6;
@@ -76,20 +82,24 @@ header .title a{
 }
 
 .content {
-	margin-left: 20px;
+	margin-left: 40px;
 }
 
-.content a .pdf-link i{
-  font-size:100px;
+.content a i {
+  margin-left: 5px;
 }
 
 .profile {
-	/*display: table-caption;*/
+	display: inline-flex;
 }
 
 .profile img {
 	width:100%;
 	max-width:250px;
+}
+
+.profile .right-contents {
+  margin-left: 35px;
 }
 
 .works {
@@ -107,6 +117,8 @@ header .title a{
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
+  color: #fff;
+  font-weight: bold;
 }
 
 .works img{
@@ -115,7 +127,8 @@ header .title a{
 
 .work-wrapper {
 	width: 24.3%;
-    display: inline-grid;
+  display: inline-block;
+  text-align: left;
 	border:1px solid #ffffff;
 	margin: 20px 30px;
 	padding:20px 30px;
@@ -146,6 +159,26 @@ header .title a{
 }
 
 
+side-menu {
+  width: 27%;
+float: left;
+background-color: black;
+opacity: 0.7;
+margin-left: 30px;
+position: fixed;
+margin-top: 29px;
+}
+
+side-menu .side-menu {
+  margin: 10px 10px 60px 10px;
+  text-align: center;
+}
+
+side-menu .side-menu .item {
+  margin-top: 26px;
+font-size: 17px;
+}
+
 
 footer {
 	text-align: center;
@@ -167,6 +200,12 @@ footer {
   		position: relative;
   		margin: 0px;
 	}
+
+  main-top {
+    width: 100%;
+    /* float: right;
+    margin-left: 30%; */
+  }
 
 	body .title {
 		margin-bottom: 2em;
@@ -212,9 +251,17 @@ footer {
 		width:100%;
 	}
 
+  .modalContents a {
+    color: darkorchid;
+  }
+
 	.openModal{
 		width:100%;
 	}
+
+  side-menu {
+    display: none;
+  }
 }
 
 
@@ -262,6 +309,10 @@ footer {
 
 .modalContents h1{
 	margin-bottom:2em;
+}
+
+.modalContents a {
+  color: darkorchid;
 }
 
 .modalContents .movie {
@@ -343,7 +394,7 @@ button {
 		padding: 20px;
 		margin: auto;
 	}
-	
+
 	.carousel img {
 		object-fit: scale-down;
 		max-height: 400px;

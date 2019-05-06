@@ -67,13 +67,13 @@ $(function(){
 // $(function(){
 //   //マウス移動時のイベントをBODYタグに登録する
 //   document.body.addEventListener("mousemove", function(e){
- 
+
 //     //座標を取得する
 //     var mX = e.pageX;  //X座標
 //     var mY = e.pageY;  //Y座標
 
 
- 
+
 //     //座標を表示する
 //     document.getElementById("txtX").value = mX;
 //     document.getElementById("txtY").value = mY;
@@ -88,5 +88,21 @@ $(function () {
     });
 });
 
-
-
+//サイドメニュー用ページ内遷移
+$(function(){
+   // #で始まるアンカーをクリックした場合に処理
+   $('a[href^="#"]').click(function() {
+      // スクロールの速度
+      var speed = 100; // ミリ秒
+      // アンカーの値取得
+      var href= $(this).attr("href");
+      // 移動先を取得
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      // 移動先を数値で取得
+      var position = target.offset().top;
+      console.log(position);
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position - 50}, speed, 'swing');
+      return false;
+   });
+});

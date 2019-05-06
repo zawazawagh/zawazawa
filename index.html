@@ -39,35 +39,36 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
+
       gtag('config', 'UA-134151376-1');
     </script>
   </head>
 
   <body>
     <div id="header"></div>
-
-    <main>
+    <main-top>
       <div class="section-wrapper">
-          <div class="section"> 
+          <div class="section" id="prof">
           <h1>Profile</h1>
           <div class="content profile">
-            <img src="img/waiyade.png" alt="プロフィール写真" title="プロフィール写真">
-            <div class="name">小沢健悟</div>
-            <div class="belonging">東京大学 学際情報学府 学際情報学専攻 先端表現情報学コース 小川研究室 修士1年</div>
-            <div class="sns-link">
-              <a href="https://twitter.com/zawazawatw" target="_blank"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.facebook.com/kengo.ozw" target="_blank"><i class="fab fa-facebook-square"></i></a>
-              <a href="https://zawazawahtn.hatenablog.com/" target="_blank"><i class="fas fa-pen-square"></i></a>
-              <a href="https://github.com/zawazawagh" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="http://amzn.asia/gh2Thqj" target="_blank"><i class="fab fa-amazon"></i></a>  
+            <img src="img/ore.png" alt="プロフィール写真" title="プロフィール写真">
+            <div class="right-contents">
+              <div class="name">小沢健悟</div>
+              <div class="belonging">東京大学 学際情報学府 学際情報学専攻 先端表現情報学コース 小川研究室 修士2年</div>
+              <div class="sns-link">
+                <a href="https://twitter.com/zawazawatw" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/kengo.ozw" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://zawazawahtn.hatenablog.com/" target="_blank"><i class="fas fa-pen-square"></i></a>
+                <a href="https://github.com/zawazawagh" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="http://amzn.asia/gh2Thqj" target="_blank"><i class="fab fa-amazon"></i></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="section-wrapper">
-        <div class="section">
+        <div class="section" id="research">
           <h1>Research Field / Interests</h1>
           <div class="content">
             VR・AR
@@ -80,18 +81,25 @@
       </div>
 
       <div class="section-wrapper">
-        <div class="section">
-          <h1>Publications</h1>
+        <div class="section" id="pub">
+          <h1>Publications / Demos / Talks</h1>
           <div class="content">
-            小沢健悟, 小川剛史 "MR空間における歩行の安全性を考慮した空間切り替え制御手法に関する一検討" 日本バーチャルリアリティ学会サイバースペースと仮想都市研究会 2019
-            <a href="works/VR_SIGCS.pdf"><i class="fas fa-file-alt"></i></a>
+            小沢健悟, 小川剛史 "MR空間における歩行の安全性を考慮した空間切り替え制御手法に関する一検討"
+            日本バーチャルリアリティ学会サイバースペースと仮想都市研究会 2019<a href="works/VR_SIGCS.pdf"><i class="fas fa-file-alt"></i></a>
+            <br>
+            <br>歩きVRプロトタイプ, Roppongi.unoty #2 and xRTechTokyo #15
+            <br>
+            <br>SXSWでみたXR関連トピックス!!<a href="https://www.slideshare.net/zawazawaSS/sxswxr"><i class="fas fa-file-alt"></i></a>
+            <br>「みんな歩きVRしたくない？！」<a href="https://www.slideshare.net/zawazawaSS/xrtechtokyo15lt"><i class="fas fa-file-alt"></i></a>
+
+
           </div>
         </div>
       </div>
 
 
       <div class="section-wrapper">
-        <div class="section">
+        <div class="section" id="edu">
           <h1>Education</h1>
           <div class="content">
             2018.4 現在の所属
@@ -102,16 +110,16 @@
       </div>
 
       <div class="section-wrapper">
-        <div class="section">
+        <div class="section" id="exp">
           <h1>Experience</h1>
           <div class="content intern">
 
-  
+
             <p>メルカリR4D
               2018/8 ~
               <br>XRエンジニア
             </p>
-  
+
             <p> リクルート(Summer)
               2018/9
               <br>新規事業開発チーム（インフラ）
@@ -133,7 +141,7 @@
       </div>
 
       <div class="section-wrapper">
-        <div class="section works">
+        <div class="section works" id="works">
           <a href="works.html">
             <img src="img/works_img_mod.png" alt="works" title="works">
             <div class="works-title">Works</div>
@@ -142,7 +150,7 @@
       </div>
 
       <div class="section-wrapper">
-        <div class="section">
+        <div class="section" id="hobby">
           <h1>Hobby</h1>
           <div class="content">
             音楽
@@ -153,7 +161,7 @@
       </div>
 
       <div class="section-wrapper">
-        <div class="section">
+        <div class="section" id="contect">
           <h1>Contact</h1>
           <div class="content">
             kengorou2014@g.ecc.u-tokyo.ac.jp
@@ -161,7 +169,38 @@
         </div>
       </div>
 
-    </main>
+    </main-top>
+    <side-menu>
+      <div class="side-menu">
+        <div class="title">
+          Menu
+        </div>
+        <div class="item">
+          <a href="#prof">Profile</a>
+        </div>
+        <div class="item">
+          <a href="#research">Research Field / Interests</a>
+        </div>
+        <div class="item">
+          <a href="#pub">Publications / Demos / Talks</a>
+        </div>
+        <div class="item">
+          <a href="#edu">Education</a>
+        </div>
+        <div class="item">
+          <a href="#exp">Experience</a>
+        </div>
+        <div class="item">
+          <a href="#works">Works</a>
+        </div>
+        <div class="item">
+          <a href="#hobby">Hobby</a>
+        </div>
+        <div class="item">
+          <a href="#contect">Contact</a>
+        </div>
+      </div>
+    </side-menu>
     <footer>
 Kengo Ozawa 2018, All Right Reserved.
     </footer>
