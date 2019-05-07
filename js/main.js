@@ -15,12 +15,13 @@ $(function () {
 	var count = 0;
 
 	// do {
-	//   	$(String(id + count)).click(function(){
-	//   	    $(String(modalid + count)).fadeIn();
+	//   	$(String(id + String(count))).click(function(){
+	//   	    $(String(modalid + String(count))).fadeIn();
 	//   	});
 	// 	count++;
-	// 	console.log(modalid + count);
-	// } while (count < 8);
+	// 	console.log(String(modalid + count));
+  //   console.log(String(id + count));
+	// } while (count < 10);
 
 	$('#openModal1').click(function(){
 	    $('#modalArea1').fadeIn();
@@ -45,6 +46,9 @@ $(function () {
   	});
 	$('#openModal8').click(function(){
 	    $('#modalArea8').fadeIn();
+  	});
+  $('#openModal9').click(function(){
+      $('#modalArea9').fadeIn();
   	});
 
   	$('#closeModal , #modalBg').click(function(){
