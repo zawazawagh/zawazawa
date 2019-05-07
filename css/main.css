@@ -226,6 +226,14 @@ footer {
 		margin-left: 0px;
 	}
 
+  .profile {
+    display: block;
+  }
+
+  .profile .right-contents {
+    margin-left: 0px;
+  }
+
 	.work-wrapper {
 		width: 81%;
 		/*max-width: 300px;*/
