@@ -50,6 +50,9 @@ $(function () {
   $('#openModal9').click(function(){
       $('#modalArea9').fadeIn();
   	});
+  $('#openModal10').click(function(){
+      $('#modalArea10').fadeIn();
+  	});
 
   	$('#closeModal , #modalBg').click(function(){
   	$('.modalArea').fadeOut();
