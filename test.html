@@ -3,12 +3,45 @@
 <head>
   <meta charset="utf-8">
   <title>サンプル</title>
-  <!-- <script src="main.js"></script> -->
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
-<body>
-  X座標：<input type="text" id="txtX" />
-  Y座標：<input type="text" id="txtY" />
-</body>
+<style>
+#p3{border:1px solid black;width:300px;}
+</style>
+
+<div id="p3" >テスト３</div>
+<div onmousedown="mouseDown()";>down</div>
+<div onmouseup="mouseUP()">up</div>
+<a-scene background="color: #FAFAFA">
+  <a-camera>
+    <a-cursor></a-cursor>
+  </a-camera>
+  <a-box camera-listener position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+  <a-sphere camera-listener position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+  <a-cylinder camera-listener position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+</a-scene>
+
+<script>
+function mouseDown(){
+  alert("hoge");
+	document.getElementById("p3").style.backgroundColor = "Aquamarine";
+}
+function mouseUP(){
+	document.getElementById("p3").style.backgroundColor = "transparent";
+}
+
+//クリックで色が変わる
+var i = -1;
+var COLORS = ['red', 'green', 'blue'];
+AFRAME.registerComponent('camera-listener', {
+  init: function () {
+    this.el.addEventListener('click', function (evt) {
+      i = (i + 1) % COLORS.length;
+      this.setAttribute('material', 'color', COLORS[i]);
+    });
+  }
+});
+</script>
 </html>
