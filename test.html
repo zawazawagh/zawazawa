@@ -17,6 +17,14 @@
       });
     }
   });
+  AFRAME.registerComponent('camera-listener', {
+    init: function () {
+      this.el.addEventListener('touchstart', function (evt) {
+        i = (i + 1) % COLORS.length;
+        this.setAttribute('material', 'color', COLORS[i]);
+      });
+    }
+  });
   </script>
 </head>
 <style>
