@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<!-- three.js library -->
-<!-- <script src='js/three.min.js'></script> -->
-<!-- ar.js -->
-<!-- <script src="js/ar.js"></script> -->
-<!-- aframe.js -->
-<!-- <script src="js/aframe-ar.js"></script> -->
-<!-- <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script> -->
-<!-- <script>THREEx.ArToolkitContext.baseURL = '../'</script> -->
+<html lang="ja">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- three.js library -->
+    <!-- <script src='js/three.min.js'></script> -->
+    <!-- ar.js -->
+    <!-- <script src="js/ar.js"></script> -->
+    <!-- aframe.js -->
+    <!-- <script src="js/aframe-ar.js"></script> -->
+    <!-- <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script> -->
+    <!-- <script>THREEx.ArToolkitContext.baseURL = '../'</script> -->
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+  1
   <div style='position: absolute; top: 10px; width:100%; text-align: center; z-index: 1;'>
     <!-- <a-scene embedded arjs="debugUIEnabled:false;">
       <a-marker preset="kanji">
@@ -20,8 +26,7 @@
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene> -->
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
 
     <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;">
       <a-marker preset="kanji">
@@ -184,3 +189,4 @@
 		})
 	})
 </script></body> -->
+</html>
