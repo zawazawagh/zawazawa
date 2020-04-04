@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>4</title>
+  <title>5</title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
   <script>
@@ -17,6 +17,10 @@
       });
     }
   });
+  var elm = document.getElementById("body");
+  elm.addEventListener("touchstart", function(){
+    alert("hoge")
+  }, false);
   </script>
 </head>
 <style>
@@ -50,9 +54,6 @@
 // function mouseUP(){
 // 	document.getElementById("p3").style.backgroundColor = "transparent";
 // }
-var elm = document.getElementById("body");
-elm.addEventListener("touchstart", function(){
-  alert("hoge")
-}, false);
+
 </script>
 </html>
