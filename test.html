@@ -5,6 +5,19 @@
   <title>サンプル</title>
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script>
+  //クリックで色が変わる
+  var i = -1;
+  var COLORS = ['red', 'green', 'blue'];
+  AFRAME.registerComponent('camera-listener', {
+    init: function () {
+      this.el.addEventListener('click', function (evt) {
+        i = (i + 1) % COLORS.length;
+        this.setAttribute('material', 'color', COLORS[i]);
+      });
+    }
+  });
+  </script>
 </head>
 <style>
 #p3{border:1px solid black;width:300px;}
@@ -32,16 +45,6 @@ function mouseUP(){
 	document.getElementById("p3").style.backgroundColor = "transparent";
 }
 
-//クリックで色が変わる
-var i = -1;
-var COLORS = ['red', 'green', 'blue'];
-AFRAME.registerComponent('camera-listener', {
-  init: function () {
-    this.el.addEventListener('click', function (evt) {
-      i = (i + 1) % COLORS.length;
-      this.setAttribute('material', 'color', COLORS[i]);
-    });
-  }
-});
+
 </script>
 </html>
