@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <title>5</title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- <script src='js/three.min.js'></script> -->
+  <script src="https://threejs.org/build/three.js"></script>
+  <script src="js/ar.js"></script>
   <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
   <script>
   //クリックで色が変わる
@@ -32,9 +35,6 @@
   <a-camera id="myCamera">
     <a-cursor></a-cursor>
   </a-camera>
-  <!-- <a-box camera-listener position="-1 2 -3" rotation="0 60 0" color="#4CC3D9" shadow></a-box>
-  <a-sphere camera-listener position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-  <a-cylinder camera-listener position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder> -->
   <a-box      id="mybox" camera-listener position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
   <a-sphere   camera-listener position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
   <a-cylinder camera-listener position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
@@ -60,24 +60,29 @@
 //   i = (i + 1) % COLORS.length;
 //   box.setAttribute('material', 'color', COLORS[i]);
 // }, false);
-var camera = document.getElementById("myCamera");
+
 document.body.addEventListener("click", function(ret) {
+  var camera = document.getElementById("myCamera");
   if(!ret.isTrusted) return;
   var tapX = ret.clientX;                           // マウスのx座標
   var tapY = ret.clientY;                           // マウスのy座標
   tapX =  (tapX / window.innerWidth)  * 2 - 1;    // -1 ～ +1 に正規化されたx座標
   tapY = -(tapY / window.innerHeight) * 2 + 1;    // -1 ～ +1 に正規化されたy座標
   // alert(tapX);
-  console.log(tapX);
+  // console.log(tapX);
   var pos = new THREE.Vector3(tapX, tapY, 1);     // マウスベクトル
-  pos.unproject(camera);                              // スクリーン座標系をカメラ座標系に変換
+  var testpos = new THREE.Vector3(0,0,0);
+  console.log(pos);
+  // new THREE.Projector.unprojectVector(testpos, camera);
+  // pos.unproject(camera);                              // スクリーン座標系をカメラ座標系に変換
+  // console.log(camera);
   // レイキャスタを作成（始点, 向きのベクトル）
-  var ray = new THREE.Raycaster(camera.position, pos.sub(camera.position).normalize());
-  var obj = ray.intersectObjects(scene.children, true);   // レイと交差したオブジェクトの取得
-  if(obj.length > 0) {                                // 交差したオブジェクトがあれば
-    console.log("obj.length : ", obj.length);
+  // var ray = new THREE.Raycaster(camera.position, pos.sub(camera.position).normalize());
+  // var obj = ray.intersectObjects(scene.children, true);   // レイと交差したオブジェクトの取得
+  // if(obj.length > 0) {                                // 交差したオブジェクトがあれば
+    // console.log("obj.length : ", obj.length);
     // picked(obj[0].object.name);                       // ピックされた対象に応じた処理を実行
-  }
+  // }
   
 });
 
