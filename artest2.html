@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <!-- <meta name="viewport" content="width=device-width,intial-scale=1"> -->
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1">
-        <title>25</title>
+        <title>26</title>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
         <!-- <script src="https://threejs.org/build/three.js"></script> -->
@@ -35,14 +35,14 @@
                 <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
                 </a-animation>
               </a-sphere> -->
-              <a-entity col1
+              <a-entity tap-listener
                   geometry="primitive: box"
                   position="0 1 1" 
                   class="intersectable clickable" 
                   rotation="0 0 0" 
                   scale=".9 .9 .9">
               </a-entity>
-              <a-entity col1
+              <a-entity tap-listener
                   geometry="primitive: box" 
                   class="intersectable clickable" 
                   position="0 1 -1" 
