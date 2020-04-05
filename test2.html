@@ -50,14 +50,21 @@
         </a-camera>
       </a-entity>
 
-      <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>
-
+      <!-- <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity> -->
       <a-entity position="-3.5 1 0">
+            <a-entity cursor-listener
+                      geomtery="primitive: box"
+                      class="intersectable"
+                      animation="startEvents: click; property: position; from: 0 0 0; to: 0 0 -10; dur: 2000"></a-entity>
+            </a-entity>
+          </a-entity>
+
+      <!-- <a-entity position="-3.5 1 0">
         <a-entity mixin="red cube"
                   class="intersectable"
                   animation="startEvents: click; property: position; from: 0 0 0; to: 0 0 -10; dur: 2000">
         </a-entity>
-      </a-entity>
+      </a-entity> -->
 
       <a-entity position="0 1 1">
         <a-entity id="invisibleCube"
@@ -100,11 +107,11 @@
       </a-entity>
 
       <a-entity cursor-listener
-                mixin="yellow cube" 
+                mixin="cube" 
                 position="0 3 -3" 
                 class="intersectable clickable" 
                 rotation="0 45 0" 
-                scale=".5 .5 .5">
+                scale=".9 .9 .9">
       </a-entity>
     </a-scene>
   </body>
