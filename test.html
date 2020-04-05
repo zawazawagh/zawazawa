@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>5</title>
+  <title>6</title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- <script src='js/three.min.js'></script> -->
   <script src="https://threejs.org/build/three.js"></script>
@@ -14,7 +14,7 @@
   var COLORS = ['red', 'green', 'blue'];
   AFRAME.registerComponent('camera-listener', {
     init: function () {
-      this.el.addEventListener('touchstart', function (evt) {
+      this.el.addEventListener('click', function (evt) {
         i = (i + 1) % COLORS.length;
         this.setAttribute('material', 'color', COLORS[i]);
       });
