@@ -39,14 +39,6 @@
 
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable"></a-entity>
 
-      <a-entity camera look-controls>
-            <a-entity cursor="fuse: true; fuseTimeout: 500"
-                      position="0 0 -1"
-                      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                      material="color: black; shader: flat">
-            </a-entity>
-      </a-entity>
-
       <a-entity position="0 .6 4">
         <a-camera>
           <a-entity raycaster="far: 30; objects: .intersectable"
@@ -59,7 +51,6 @@
       </a-entity>
 
       <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>
-
 
       <a-entity position="-3.5 1 0">
         <a-entity mixin="red cube"
@@ -111,14 +102,14 @@
     </a-scene>
   </body>
   <script>
-  function mouseDown(){
-    alert("hoge");
-  }
+//   function mouseDown(){
+//     alert("hoge");
+//   }
 
-  document.body.addEventListener("click", function(ret) {
-      var cube = document.getElementById("mybox");
-      console.log(ret);
-  });
+//   document.body.addEventListener("click", function(ret) {
+//       var cube = document.getElementById("mybox");
+//       console.log(ret);
+//   });
 
 
   </script>
