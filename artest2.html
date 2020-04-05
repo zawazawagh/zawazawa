@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1">
-        <title>4</title>
+        <title>5</title>
         <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
         <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
         <!-- <script src="https://threejs.org/build/three.js"></script> -->
@@ -26,8 +26,6 @@
     <body style="margin:0px; overflow:hidden;">
         <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;">
             <a-marker preset="kanji">
-              <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable"></a-entity>
-              <a-entity camera></a-entity>
               <a-text value="My name is zawazawa!\n Nice to meet you!" position=" 0 0 1" align="center" rotation="-90 0 0" color="#7993ff">
               </a-text>
               <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#111">
@@ -49,6 +47,8 @@
                   color="#4CC3D9" 
                   shadow>
               </a-entity>
+              <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable"></a-entity>
+              <a-entity camera></a-entity>
             </a-marker>
             
         </a-scene>
