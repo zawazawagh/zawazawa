@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,intial-scale=1">
-        <title>21</title>
+        <!-- <meta name="viewport" content="width=device-width,intial-scale=1"> -->
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1">
+        <title>22</title>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
         <!-- <script src="https://threejs.org/build/three.js"></script> -->
@@ -22,11 +23,17 @@
           }
         });
         </script>
+        <style>
+          a-scene {
+            height: 300px;
+            width: 600px;
+          }
+        </style>
     </head>
     <body style="margin:0px; overflow:hidden;">
     <!-- <body> -->
-        <!-- <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;"> -->
-        <a-scene arjs="debugUIEnabled:false; sourceType: webcam;">
+        <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;" vr-mode-ui="enabled: false">
+        <!-- <a-scene arjs="debugUIEnabled:true; sourceType: webcam;" vr-mode-ui="enabled: false"> -->
             <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable"></a-entity>
             <!-- <a-marker preset="kanji">     -->
               <!-- <a-text value="My name is zawazawa!\n Nice to meet you!" position=" 0 0 1" rotation="-90 0 0" color="#7993ff"></a-text> -->
