@@ -1,103 +1,128 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>9</title>
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  <!-- <script src='js/three.min.js'></script> -->
-  <!-- <script src="https://threejs.org/build/three.js"></script> -->
-  <!-- <script src="js/ar.js"></script> -->
-  <!-- <script src="https://unpkg.com/aframe-event-set-component@4.1.2/dist/aframe-event-set-component.min.js"></script> -->
-  <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
+  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script>
+  <title>1</title>
   <script>
-  //クリックで色が変わる
-  AFRAME.registerComponent('cursor-listener', {
-          init: function () {
-            var lastIndex = -1;
-            var COLORS = ['red', 'green', 'blue'];
-            this.el.addEventListener('click', function (evt) {
-              lastIndex = (lastIndex + 1) % COLORS.length;
-              this.setAttribute('material', 'color', COLORS[lastIndex]);
-              console.log('I was clicked at: ', evt.detail.intersection.point);
-            });
-          }
+    AFRAME.registerComponent('navigate-on-click', {
+      schema: {
+        url: {
+          default: ''
+        }
+      },
+      init: function () {
+        console.log("hello")
+        console.log(this.el)
+        var data = this.data;
+        var el = this.el;
+        el.addEventListener('click', function () {
+          //window.location.href = data.url;
+          window.open(data.url, '_blank');
         });
+      }
+    });
+
+    AFRAME.registerComponent('color-randomizer', {
+      init: function () {
+        let colors = ["red", "green", "blue", "black", "orange", "white"]
+        var el = this.el;
+        el.addEventListener('click', (e) => {     
+          this.el.setAttribute('color', colors[Math.floor(Math.random() * colors.length)])
+        });
+      }
+    });
   </script>
-</head>
+  <script defer>
+    /* a-frames bind */
 
-<body id="body">
-<!-- <div id="p3" >テスト３</div>
-<div ontouchstart="mouseDown()";>down</div>
-<div ontouchstart="mouseUP()">up</div> -->
-<a-scene background="color: #FAFAFA">
-  <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable"></a-entity>
-  <!-- <a-camera></a-camera> -->
-  <a-entity cursor-listener
-  geometry="primitive: box"
-  position="0 3 -3" 
-  class="intersectable clickable" 
-  rotation="0 45 0" 
-  scale=".9 .9 .9">
-</a-entity>
-  <a-entity 
-    geometry="primitive: box" 
-    class="intersectable clickable" 
-    cursor-listener position="-1 0.5 -3" 
-    rotation="0 45 0" 
-    color="#4CC3D9" 
-    shadow>
-  </a-entity>
-  <!-- <a-sphere   cursor-listener position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere> -->
-  <!-- <a-cylinder cursor-listener position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder> -->
-  <!-- <a-plane    cursor-listener position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane> -->
-  <a-plane    cursor-listener position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
-</a-scene>
-</body>
+var bind = function bind(fn, ctx /* , arg1, arg2 */) {
+  return (function(prependedArgs) {
+    return function bound() {
+      // Concat the bound function arguments with those passed to original bind
+      var args = prependedArgs.concat(Array.prototype.slice.call(arguments, 0));
+      return fn.apply(ctx, args);
+    };
+  })(Array.prototype.slice.call(arguments, 2));
+};
 
-<script>
-// function mouseDown(){
-//   alert("hoge");
-// 	document.getElementById("p3").style.backgroundColor = "Aquamarine";
-// }
-// function mouseUP(){
-// 	document.getElementById("p3").style.backgroundColor = "transparent";
-// }
-// var elm = document.getElementById("body");
-// var box = document.getElementById("mybox");
-// var i = -1;
-// var COLORS = ['red', 'green', 'blue'];
-// elm.addEventListener("touchstart", function(){
-//   // alert("hoge")
-//   i = (i + 1) % COLORS.length;
-//   box.setAttribute('material', 'color', COLORS[i]);
-// }, false);
+/* * * * * * * * * * * * * * * * * * * * * *
+   wait until the cursor is ready and accessible
+* * * * * * * * * * * * * * * * * * * * * * */
+let marker = document.querySelector("[cursor]");
+console.log(marker.hasLoaded);
 
-// document.body.addEventListener("click", function(ret) {
-//   var camera = document.getElementById("myCamera");
-//   if(!ret.isTrusted) return;
-//   var tapX = ret.clientX;                           // マウスのx座標
-//   var tapY = ret.clientY;                           // マウスのy座標
-//   tapX =  (tapX / window.innerWidth)  * 2 - 1;    // -1 ～ +1 に正規化されたx座標
-//   tapY = -(tapY / window.innerHeight) * 2 + 1;    // -1 ～ +1 に正規化されたy座標
-//   // alert(tapX);
-//   // console.log(tapX);
-//   var pos = new THREE.Vector3(tapX, tapY, 1);     // マウスベクトル
-//   var testpos = new THREE.Vector3(0,0,0);
-//   console.log(pos);
-  // new THREE.Projector.unprojectVector(testpos, camera);
-  // pos.unproject(camera);                              // スクリーン座標系をカメラ座標系に変換
-  // console.log(camera);
-  // レイキャスタを作成（始点, 向きのベクトル）
-  // var ray = new THREE.Raycaster(camera.position, pos.sub(camera.position).normalize());
-  // var obj = ray.intersectObjects(scene.children, true);   // レイと交差したオブジェクトの取得
-  // if(obj.length > 0) {                                // 交差したオブジェクトがあれば
-    // console.log("obj.length : ", obj.length);
-    // picked(obj[0].object.name);                       // ピックされた対象に応じた処理を実行
-  // }
-  
-// });
+/* * * * * * * * * * * * * * * * * * * * * *
+  replace the curosr.onMouseMove function
+* * * * * * * * * * * * * * * * * * * * * * */
+let cursorComponent = marker.components.cursor;
+cursorComponent.onMouseMove = (function() {
+  console.warn("Cursor.onMouseMove is modified");
+  var direction = new THREE.Vector3();
+  var mouse = new THREE.Vector2();
+  var origin = new THREE.Vector3();
+  var rayCasterConfig = { origin: origin, direction: direction };
+  return function(evt) {
+    var bounds = this.canvasBounds;
+    var camera = this.el.sceneEl.camera;
+    var left;
+    var point;
+    var top;
 
+    camera.parent.updateMatrixWorld();
 
+    // Calculate mouse position based on the canvas element
+    if (evt.type === "touchmove" || evt.type === "touchstart") {
+      // Track the first touch for simplicity.
+      point = evt.touches.item(0);
+    } else {
+      point = evt;
+    }
 
-</script>
+    left = point.clientX - bounds.left;
+    top = point.clientY - bounds.top;
+    mouse.x = (left / bounds.width) * 2 - 1;
+    mouse.y = -(top / bounds.height) * 2 + 1;
+    origin.setFromMatrixPosition(camera.matrixWorld);
+    let matrix = new THREE.Matrix4();
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+      The only part we want to modify is the direction calculations
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    direction
+      .set(mouse.x, mouse.y, 0.5)
+      .applyMatrix4(matrix.getInverse(camera.projectionMatrix))
+      .applyMatrix4(camera.matrixWorld)
+      .sub(origin)
+      .normalize();
+
+    this.el.setAttribute("raycaster", rayCasterConfig);
+    if (evt.type === "touchmove") {
+      evt.preventDefault();
+    }
+  };
+})();
+
+/* * * * * * * * * * * * * * * * * * * * * *
+               bind the context
+* * * * * * * * * * * * * * * * * * * * * * */
+cursorComponent.onMouseMove = bind(
+  cursorComponent.onMouseMove,
+  cursorComponent
+);
+
+/* * * * * * * * * * * * * * * * * * * * * *
+  Update the components event listeners
+* * * * * * * * * * * * * * * * * * * * * * */
+cursorComponent.updateMouseEventListeners();
+
+  </script>
+
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box">
+        <a-box position="0 0.5 0" color-randomizer></a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
 </html>

@@ -16,6 +16,8 @@
             var lastIndex = -1;
             var COLORS = ['red', 'green', 'blue'];
             this.el.addEventListener('click', function (evt) {
+              // if(evt.target.classList.contains('box')) { return }
+              console.log(evt.target.classList.contains('box'));
               lastIndex = (lastIndex + 1) % COLORS.length;
               this.setAttribute('material', 'color', COLORS[lastIndex]);
               console.log('I was clicked at: ', evt.detail.intersection.point);
@@ -28,7 +30,8 @@
     <!-- <body> -->
         <!-- <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;" vr-mode-ui="enabled: false"> -->
         <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;" vr-mode-ui="enabled: false" cursor="fuse: false;">
-            <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable"></a-entity>
+            <!-- <a-entity cursor="fuse: false; rayOrigin: mouse" raycaster="objects: .intersectable"></a-entity> -->
+            <a-entity cursor="fuse: false; rayOrigin: mouse" raycaster="objects: .intersectable"></a-entity>
             <a-marker preset="kanji">    
               <a-text value="My name is zawazawa!\n Nice to meet you!" position=" 0 0 1" rotation="-90 0 0" color="#7993ff"></a-text>
               <!-- <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#111">
@@ -54,14 +57,15 @@
 
             <a-entity tap-listener
             geometry="primitive: box" 
-            class="intersectable clickable" 
+            class="intersectable clickable box" 
             position="0 0 -3" 
-            rotation="0 40 0" 
+            rotation="0 0 0" 
             color="#4CC3D9" 
             scale=".2 .2 .2"
             shadow>
             </a-entity>
             <a-entity camera></a-entity>
+            <!-- <a-entity camera raycaster= "objects: .intersectable" cursor="rayOrigin: mouse;"></a-entity>             -->
         </a-scene>
     </body>
 </html>
