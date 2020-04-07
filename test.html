@@ -2,7 +2,7 @@
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script>
-  <title>2</title>
+  <title>3</title>
   <script>
     AFRAME.registerComponent('navigate-on-click', {
       schema: {
@@ -27,7 +27,8 @@
         let colors = ["red", "green", "blue", "black", "orange", "white"]
         var el = this.el;
         el.addEventListener('click', (e) => {
-          alert("tapped at ", e.clientX);
+          // alert("tapped at ", e.clientX);
+          if( !e.isTrusted ) { return }
           this.el.setAttribute('color', colors[Math.floor(Math.random() * colors.length)])
         });
       }
@@ -92,6 +93,8 @@ cursorComponent.onMouseMove = (function() {
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
       The only part we want to modify is the direction calculations
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    //多数のdirectionを円錐状に並べる
     direction
       .set(mouse.x, mouse.y, 0.5)
       .applyMatrix4(matrix.getInverse(camera.projectionMatrix))
