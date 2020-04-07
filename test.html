@@ -2,7 +2,7 @@
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script>
-  <title>3</title>
+  <title>4</title>
   <script>
     AFRAME.registerComponent('navigate-on-click', {
       schema: {
@@ -28,7 +28,7 @@
         var el = this.el;
         el.addEventListener('click', (e) => {
           // alert("tapped at ", e.clientX);
-          if( !e.isTrusted ) { return }
+          // if( !e.isTrusted ) { return }
           this.el.setAttribute('color', colors[Math.floor(Math.random() * colors.length)])
         });
       }
