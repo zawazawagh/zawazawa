@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>2</title>
+    <title>3</title>
     <meta name="description" content="Hello, World! • A-Frame">
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
@@ -125,11 +125,11 @@
   <body style="margin : 0px; overflow: hidden;">
     <!-- <a-scene background="color: #ECECEC" stats> -->
     <a-scene embedded arjs>
-      <a-assets>
+      <!-- <a-assets> -->
         <!-- <a-asset-item id="cityModel" src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"></a-asset-item> -->
         <!-- これをローカル環境でやるとクロスオリジンのエラーがでる。ビルドすると表示される -->
         <!-- <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"> -->
-      </a-assets>
+      <!-- </a-assets> -->
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: .touchable">
         <a-box class="touchable" position="0 0.5 0" color-randomizer></a-box>
       </a-marker>
@@ -165,9 +165,10 @@
       <!-- <a-entity glTF-model="#cityModel" modify-materials></a-entity> -->
       <!-- <a-sky src="#skyTexture"></a-sky> -->
       <!-- イベントを発火させるためにはカメラ視点に立つカーソルが必要 -->
-      <a-camera>
-        <!-- <a-cursor></a-cursor> -->
-      </a-camera>
+      <!-- <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera> -->
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
   <script>
