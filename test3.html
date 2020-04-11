@@ -6,6 +6,8 @@
     <meta name="description" content="Hello, World! • A-Frame">
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="js/component.js"></script>
+    <script src="js/cursor.js" defer></script>
     <script>
       AFRAME.registerComponent("log", {
         schema: {type: "string"},
@@ -126,17 +128,22 @@
         <!-- これをローカル環境でやるとクロスオリジンのエラーがでる。ビルドすると表示される -->
         <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
       </a-assets>
+      <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box">
+        <a-box position="0 0.5 0" color-randomizer></a-box>
+      </a-marker>
       <a-box src="https://i.imgur.com/mYmmbrp.jpg" 
+        color-randomizer
         log="hello, aframe" 
         id="redbox" 
         position="-1 0.5 -3" 
         rotation="0 45 0" 
         color="#4CC3D9" 
         animation="property: object3D.position.y; to: 1.5; dir: alternate; dur: 2000; loop: true;"
-        shadow></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+        shadow
+        ></a-box>
+      <a-sphere color-randomizer position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+      <a-cylinder color-randomizer position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+      <a-plane color-randomizer position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
       <a-entity log2="event: anEvent; message: Hello, Metaverse!"></a-entity>
       <a-entity>
         <a-entity id="updatebox" box="width: 1; height: 1; depth: 2; color: blue;", position="0 0 -3"></a-entity>
