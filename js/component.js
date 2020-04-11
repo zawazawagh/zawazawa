@@ -6,4 +6,4 @@ AFRAME.registerComponent('color-randomizer', {
         this.el.setAttribute('color', colors[Math.floor(Math.random() * colors.length)])
       });
     }
-  });
+});
