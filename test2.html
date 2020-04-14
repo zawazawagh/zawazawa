@@ -117,6 +117,13 @@
           })
         }
       })
+
+      //unityでいうところのudpateの挙動確認
+      AFRAME.registerComponent("tictest", {
+        tick: function(time, timeDelta) {
+          console.log(time," ", timeDelta);
+        }
+      })
     </script>
   </head>
   <body>
@@ -152,6 +159,7 @@
         text="value: Hello, A-Frame!; color: #BBB"
         position="1.5 1 -2"
         scale="5 5 5"></a-entity>
+      <a-entity position="0 0 0" tictest></a-entity>
       <!-- <a-entity glTF-model="#cityModel" modify-materials></a-entity> -->
       <!-- <a-sky src="#skyTexture"></a-sky> -->
       <!-- イベントを発火させるためにはカメラ視点に立つカーソルが必要 -->
