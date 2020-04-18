@@ -1,5 +1,5 @@
 <html>
-  <title>4</title>
+  <title>5</title>
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script>
@@ -42,9 +42,9 @@
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box" registerevents>
         <!-- <a-plane rotation="-90 0 0" color="#CCC" height="2" width="2"></a-plane> -->
 
-        <a-entity position="0 0 0" rotation="-90 0 0">
+        <!-- <a-entity position="0 0 0" rotation="-90 0 0"> -->
 
-          <a-plane id="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="0 0 0" rotation="0 0 0" scale="1 1 1" material="transparent: true;" 
+          <a-plane id="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="0 0 0" rotation="-90 0 0" scale="1 1 1" material="transparent: true;" 
             animation="property: position; to: 1.3 0 0; dur: 700; easing: easeInOutQuad; delay: 1000; enabled: false;">
             <a-text value="Kengo\n Ozawa" align="center" position=".8 .02 0" scale=".8 .8 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
           </a-plane>
@@ -74,7 +74,7 @@
           <a-plane id="lazystart" src="img/ar-img/chat.png" height=".2" width=".2" position="1.8 -1.7 0" rotation="0 0 0" material="opacity: 0; transparent: true;"
             animation="property: rotation; to: 0 360 0; dur: 700; easing: easeInOutQuad; delay: 4000; enabled: false;"
             animation__2="property: material.opacity; to: 1.0; dur: 700; delay: 4000; enabled: false;"></a-plane> -->
-        </a-entity>
+        <!-- </a-entity> -->
 
         <a-box position="0 0.5 0" color-randomizer></a-box>
       </a-marker>
@@ -87,12 +87,5 @@
   <script>
     var videoEl = document.querySelector('#my-video');
     videoEl.pause();
-
-    let marker = document.querySelector("[cursor]");
-    console.log(marker.hasLoaded);
-  /* * * * * * * * * * * * * * * * * * * * * *
-    replace the curosr.onMouseMove function
-  * * * * * * * * * * * * * * * * * * * * * * */
-  let cursorComponent = marker.components.cursor;
   </script>
   </html>
