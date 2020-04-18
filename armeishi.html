@@ -1,12 +1,11 @@
 <html>
-  <title>5</title>
+  <title>6</title>
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script>
   <!-- <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script> -->
   <!-- <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script> -->
   <script src="js/component.js"></script>
-  <script src="js/cursor.js" defer></script>
   <script>
     AFRAME.registerComponent('registerevents', {
 		  init: function () {
@@ -36,9 +35,9 @@
 
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
-      <a-assets>
+      <!-- <a-assets>
           <video id="my-video" src="img/ar-img/demo_mov_light.mp4" autoplay="false"></video>
-      </a-assets>
+      </a-assets> -->
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box" registerevents>
         <!-- <a-plane rotation="-90 0 0" color="#CCC" height="2" width="2"></a-plane> -->
 
@@ -84,6 +83,7 @@
       <a-entity camera></a-entity>
     </a-scene>
   </body>
+  <script src="js/cursor.js" defer></script>
   <script>
     var videoEl = document.querySelector('#my-video');
     videoEl.pause();
