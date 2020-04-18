@@ -1,19 +1,18 @@
 <html>
+  <title>2</title>
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script>
-  <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-  <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
+  <!-- <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script> -->
   <script src="js/component.js"></script>
   <script src="js/cursor.js" defer></script>
   <script>
     AFRAME.registerComponent('registerevents', {
 		  init: function () {
 		  	var marker = this.el;
-
 		  	// Make the element emit events when found and when lost.
 		  	marker.setAttribute('emitevents', 'true');
-
 		  	marker.addEventListener('markerFound', function() {
 		  		var markerId = marker.id;
           console.log('markerFound', markerId);
@@ -26,7 +25,6 @@
           var videoEl = document.querySelector('#my-video');
           videoEl.play();
 		  	});
-
 		  	marker.addEventListener('markerLost', function() {
 		  		var markerId = marker.id;
 		  		console.log('markerLost', markerId);
@@ -35,7 +33,6 @@
 		  }
     });
   </script>
-  <title>1</title>
 
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
