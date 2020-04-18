@@ -1,5 +1,5 @@
 <html>
-  <title>10</title>
+  <title>11</title>
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script>
@@ -36,9 +36,9 @@
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <!-- a-assetsを用いるとmarkerの座標が原点でなくなり、オブジェクトがスマホの角度とスクリーン座標の影響を受け、タッチスクロールによる回転が効き始めてしまう -->
-      <a-assets>
+      <!-- <a-assets>
           <video id="my-video" src="img/ar-img/demo_mov_light.mp4" autoplay="false"></video>
-      </a-assets>
+      </a-assets> -->
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box" registerevents>
         <!-- <a-plane rotation="-90 0 0" color="#CCC" height="2" width="2"></a-plane> -->
 
@@ -86,7 +86,7 @@
   </body>
   <script src="js/cursor.js" defer></script>
   <script>
-    // var videoEl = document.querySelector('#my-video');
-    // videoEl.pause();
+    var videoEl = document.querySelector('#my-video');
+    videoEl.pause();
   </script>
   </html>
