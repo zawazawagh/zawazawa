@@ -1,5 +1,5 @@
 <html>
-  <title>19</title>
+  <title>20</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
@@ -37,7 +37,7 @@
     <a-scene embedded arjs>
       <!-- a-assetsの中でvideoを用いるとmarkerの座標が原点でなくなり、オブジェクトがスマホの角度とスクリーン座標の影響を受け、タッチスクロールによる回転が効き始めてしまう -->
       <a-assets>
-          <video id="my-video" src="img/ar-img/demo_mov_light.mp4"></video>
+          <video id="my-video" src="img/ar-img/demo_mov_light.mp4" autoplay="true"></video>
           <!-- <img id="skyTexture" src="mg/ar-img/ore.png" /> -->
       </a-assets>
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box" registerevents>
@@ -49,7 +49,7 @@
             
             <a-text value="Kengo\n Ozawa" align="center" position=".8 .02 0" scale=".8 .8 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
           </a-plane>
-          <a-plane class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video; autoplay: true;"
+          <a-plane class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video;"
             animation="property: position; to: 0 -1 0; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"></a-plane>
 
           <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 .2 -.2" rotation="0 0 0" material="depthTest: true; transparent: true;" render-order="-1"
