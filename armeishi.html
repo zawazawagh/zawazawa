@@ -1,5 +1,5 @@
 <html>
-  <title>15</title>
+  <title>16</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
@@ -37,7 +37,8 @@
     <a-scene embedded arjs>
       <!-- a-assetsを用いるとmarkerの座標が原点でなくなり、オブジェクトがスマホの角度とスクリーン座標の影響を受け、タッチスクロールによる回転が効き始めてしまう -->
       <a-assets>
-          <video id="my-video" src="img/ar-img/demo_mov_light.mp4" autoplay="false"></video>
+          <!-- <video id="my-video" src="img/ar-img/demo_mov_light.mp4" autoplay="false"></video> -->
+          <img id="skyTexture" src="mg/ar-img/ore.png" />
       </a-assets>
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box" registerevents>
         <!-- <a-plane rotation="-90 0 0" color="#CCC" height="2" width="2"></a-plane> -->
