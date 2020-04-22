@@ -1,9 +1,9 @@
 <html>
-  <title>21</title>
+  <title>22</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-  <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/3.0.0/aframe/build/aframe-ar.js"></script> -->
-  <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js"></script> -->
   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
   <script src="js/component.js"></script>
@@ -18,11 +18,11 @@
 		  		var markerId = marker.id;
           var els = document.querySelectorAll('.lazystart');
           els.forEach( function( el, _) {
-            el.setAttribute("animation", {enabled : true});
-            el.setAttribute("animation__2", {enabled : true});
+            // el.setAttribute("animation", {enabled : true});
+            // el.setAttribute("animation__2", {enabled : true});
           })
-          // var videoEl = document.querySelector('.my-video');
-          // videoEl.play();
+          var videoEl = document.querySelector('.my-video');
+          videoEl.play();
 		  	});
 		  	marker.addEventListener('markerLost', function() {
 		  		var markerId = marker.id;
@@ -35,32 +35,35 @@
 
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
-      <!-- a-assetsの中でvideoを用いるとmarkerの座標が原点でなくなり、オブジェクトがスマホの角度とスクリーン座標の影響を受け、タッチスクロールによる回転が効き始めてしまう -->
+      <!-- a-assetsの中でvideoでautoplay:true;を用いるとmarkerの座標が原点でなくなり、オブジェクトがスマホの角度とスクリーン座標の影響を受け、タッチスクロールによる回転が効き始めてしまう -->
       <a-assets>
-          <video id="my-video" src="img/ar-img/demo_mov_light.mp4"></video>
+          <video id="my-video" src="img/ar-img/demo_mov_light.mp4" crossorigin="anonymous" playsinline webkit-playsinline></video>
           <!-- <img id="skyTexture" src="mg/ar-img/ore.png" /> -->
       </a-assets>
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box" registerevents>
         <!-- <a-plane rotation="-90 0 0" color="#CCC" height="2" width="2"></a-plane> -->
 
-        <a-entity position="0 0 0" rotation="-90 0 0">
-          <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="0 0 .1" rotation="0 0 0" scale="1 1 1" material="transparent: true;" 
-            animation="property: position; to: 1.3 0 .1; dur: 700; easing: easeInOutQuad; delay: 1000; enabled: false;">
+        <a-entity position="0 0 0" rotation="0 0 0">
+          <!-- <a-plane  height=".8" width=".8" position="0 0 .1" rotation="0 0 0" scale="1 1 1" material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5; depthTest: true;" render-order=10></a-plane> -->
+          <a-plane  height=".8" width=".8" position="0 0 .6" rotation="0 0 0" scale="1 1 1" material="transparent: true; opacity: 0.2; depthTest: false;" render-order=10></a-plane>
+          <!-- <a-sphere position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" material="transparent: true; depthTest: false;"></a-sphere> -->
+          <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="0 0 0.1" rotation="0 0 0" scale="2 1 1"
+            animation="property: position; to: 1.3 0 0; dur: 700; easing: easeInOutQuad; delay: 1000; enabled: false;">
             
             <a-text value="Kengo\n Ozawa" align="center" position=".8 .02 0" scale=".8 .8 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
           </a-plane>
-          <a-video class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video;"
-            animation="property: position; to: 0 -1 0; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"></a-video>
+          <a-plane class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video;"
+            animation="property: position; to: 0 -1 0; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"></a-plane>
 
-          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 .2 -.2" rotation="0 0 0" material="depthTest: true; transparent: true;" render-order="-1"
-            animation="property: position; to: 0 -.8 -.2; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
-            animation__2="property: position; from: 0 -.80 -.2; to: 1.70 -.8 -.2; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
-            <a-text value="Website" align="center" position="0 .04 0.1" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
+          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 .2 -.1" rotation="0 0 0" material="depthTest: true; transparent: true;"
+            animation="property: position; to: 0 -.8 -.1; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
+            animation__2="property: position; from: 0 -.80 -.1; to: 1.70 -.8 -.1; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
+            <a-text value="Website" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
           </a-plane>
-          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 -.2 -.2" rotation="0 0 0" material="depthTest: true; transparent: true;" render-order="-1"
-            animation="property: position; to: 0 -1.2 -.2; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
-            animation__2="property: position; from: 0 -1.20 -.2; to: 1.70 -1.2 -.2; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
-            <a-text value="Twitter" align="center" position="0 .04 0.1" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
+          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 -.2 -.1" rotation="0 0 0" material="depthTest: true; transparent: true;"
+            animation="property: position; to: 0 -1.2 -.1; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
+            animation__2="property: position; from: 0 -1.20 -.1; to: 1.70 -1.2 -.1; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
+            <a-text value="Twitter" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
           </a-plane>
 
           <a-plane class="lazystart" src="img/ar-img/email.png" height=".3" width=".3" position="-.6 -1.7 0" rotation="0 0 0" material="opacity: 0; transparent: true;"
@@ -91,5 +94,10 @@
     // videoEl.pause();
     videoEl.play();
     console.log("videoEl : ", videoEl);
+    document.addEventListener("click", function(){
+       // videoEl.pause();
+      videoEl.play();
+      console.log("videoEl : ", videoEl);
+    });
   </script>
   </html>

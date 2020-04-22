@@ -124,11 +124,12 @@
   <body style="margin : 0px; overflow: hidden;">
     <!-- <a-scene background="color: #ECECEC" stats> -->
     <a-scene embedded arjs>
-      <!-- <a-assets> -->
+      <a-assets>
+        <video id="video" src="img/ar-img/demo_mov_light.mp4"></video>
         <!-- <a-asset-item id="cityModel" src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"></a-asset-item> -->
         <!-- これをローカル環境でやるとクロスオリジンのエラーがでる。ビルドすると表示される -->
         <!-- <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"> -->
-      <!-- </a-assets> -->
+      </a-assets>
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box">
         <a-box position="0 0.5 0" color-randomizer></a-box>
       </a-marker>
@@ -152,7 +153,7 @@
       </a-entity>
       <!-- イベントに反応するboxの作成 -->
       <!-- これはgazeで色が変わる例 -->
-      <a-box position="-3 0.5 -3" rotation="0 45 0" color="#4CC3D9"
+      <a-box position="-3 0.5 -3" rotation="0 45 0" color="#4CC3D9" src="img/ar-img/gif-sample.gif"
         event-set__enter="_event: mouseenter; color: #8FF7FF"
         event-set__leave="_event: mouseleave; color: #4CC3D9"></a-box>
       <!-- これはjsで定義されるバージョン -->
