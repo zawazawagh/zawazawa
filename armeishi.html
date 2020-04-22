@@ -45,14 +45,14 @@
 
         <a-entity position="0 0 0" rotation="0 0 0">
           <!-- <a-plane  height=".8" width=".8" position="0 0 .1" rotation="0 0 0" scale="1 1 1" material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5; depthTest: true;" render-order=10></a-plane> -->
-          <a-plane  height=".8" width=".8" position="0 0 .6" rotation="0 0 0" scale="1 1 1" material="transparent: true; opacity: 0.2; depthTest: false;" render-order=10></a-plane>
+          <a-plane  height=".8" width=".8" position="0 0 0.6" rotation="0 0 0" scale="1 1 1" src="img/ar-img/ore.png" material="transparent: true; opacity: 0.1;" render-order=-1></a-plane>
           <!-- <a-sphere position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" material="transparent: true; depthTest: false;"></a-sphere> -->
-          <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="0 0 0.1" rotation="0 0 0" scale="2 1 1"
+          <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="0 0 0.1" rotation="0 0 0" scale="1 1 1" material="transparent: true;"
             animation="property: position; to: 1.3 0 0; dur: 700; easing: easeInOutQuad; delay: 1000; enabled: false;">
             
             <a-text value="Kengo\n Ozawa" align="center" position=".8 .02 0" scale=".8 .8 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
           </a-plane>
-          <a-plane class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video;"
+          <a-plane class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video; transparent: true;"
             animation="property: position; to: 0 -1 0; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"></a-plane>
 
           <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 .2 -.1" rotation="0 0 0" material="depthTest: true; transparent: true;"
