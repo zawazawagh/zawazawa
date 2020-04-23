@@ -7,3 +7,12 @@ AFRAME.registerComponent('color-randomizer', {
       });
     }
 });
+
+AFRAME.registerComponent('link-to-twitter', {
+  init: function () {
+    el.addEventListener('click', (e) => {     
+      window.location.href = 'https://twitter.com/zawazawatw'; // 通常の遷移
+      window.open('https://twitter.com/zawazawatw', '_blank'); // 新しいタブを開き、ページを表示
+    });
+  }
+});
