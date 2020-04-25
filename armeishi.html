@@ -18,8 +18,8 @@
 		  		var markerId = marker.id;
           var els = document.querySelectorAll('.lazystart');
           els.forEach( function( el, _) {
-            // el.setAttribute("animation", {enabled : true});
-            // el.setAttribute("animation__2", {enabled : true});
+            el.setAttribute("animation", {enabled : true});
+            el.setAttribute("animation__2", {enabled : true});
           })
           var videoEl = document.querySelector('.my-video');
           videoEl.play();
@@ -44,10 +44,9 @@
         <!-- <a-plane rotation="-90 0 0" color="#CCC" height="2" width="2"></a-plane> -->
 
         <a-entity position="0 0 0" rotation="0 0 0">
-          <!-- <a-plane  height=".8" width=".8" position="0 0 .1" rotation="0 0 0" scale="1 1 1" material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5; depthTest: true;" render-order=10></a-plane> -->
-          <a-plane  height=".8" width=".8" position="0 0 0.6" rotation="0 0 0" scale="1 1 1" src="img/ar-img/ore.png" material="transparent: true; opacity: 0.1;" render-order=-1></a-plane>
+          <a-plane  height="1" width="1.7" position="0 0 .05" rotation="0 0 0" scale="1 1 1" material="transparent: true; opacity: 0;" render-order=-2></a-plane>
           <!-- <a-sphere position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" material="transparent: true; depthTest: false;"></a-sphere> -->
-          <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="0 0 0.1" rotation="0 0 0" scale="1 1 1" material="transparent: true;"
+          <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="-.3 0 0" rotation="0 0 0" scale="1 1 1" material="transparent: true;"
             animation="property: position; to: 1.3 0 0; dur: 700; easing: easeInOutQuad; delay: 1000; enabled: false;">
             
             <a-text value="Kengo\n Ozawa" align="center" position=".8 .02 0" scale=".8 .8 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
@@ -55,15 +54,15 @@
           <a-plane class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video; transparent: true;"
             animation="property: position; to: 0 -1 0; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"></a-plane>
 
-          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 .2 -.1" rotation="0 0 0" material="depthTest: true; transparent: true;"
-            animation="property: position; to: 0 -.8 -.1; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
-            animation__2="property: position; from: 0 -.80 -.1; to: 1.70 -.8 -.1; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
-            <a-text value="Website" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
+          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 .2 -.05" rotation="0 0 0" material="depthTest: true; transparent: true;"
+            animation="property: position; to: 0 -.8 -.05; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
+            animation__2="property: position; from: 0 -.80 -.05; to: 1.70 -.8 -.05; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
+            <a-text value="Website" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt" render-order=-1></a-text>
           </a-plane>
-          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 -.2 -.1" rotation="0 0 0" material="depthTest: true; transparent: true;"
-            animation="property: position; to: 0 -1.2 -.1; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
-            animation__2="property: position; from: 0 -1.20 -.1; to: 1.70 -1.2 -.1; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
-            <a-text value="Twitter" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
+          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 -.2 -.05" rotation="0 0 0" material="depthTest: true; transparent: true;"
+            animation="property: position; to: 0 -1.2 -.05; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
+            animation__2="property: position; from: 0 -1.20 -.05; to: 1.70 -1.2 -.05; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
+            <a-text value="Twitter" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt" render-order=-1></a-text>
           </a-plane>
 
           <a-plane class="lazystart" src="img/ar-img/email.png" height=".3" width=".3" position="-.6 -1.7 0" rotation="0 0 0" material="opacity: 0; transparent: true;"
