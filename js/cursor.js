@@ -57,8 +57,26 @@ var bind = function bind(fn, ctx /* , arg1, arg2 */) {
         .set(mouse.x, mouse.y, 0.5)
         .applyMatrix4(matrix.getInverse(camera.projectionMatrix))
         .applyMatrix4(camera.matrixWorld)
-        .sub(origin)
+        // .unproject(camera)
+        // .sub(origin)
+        .sub(camera.position)
         .normalize();
+
+      // var scene = document.querySelector('a-scene');
+      // var camera = document.querySelector('a-entity[camera]').components.camera.camera;
+      // var mouseX = evt.clientX;                           // マウスのx座標
+      // var mouseY = evt.clientY;                           // マウスのy座標
+      // mouseX =  (mouseX / window.innerWidth)  * 2 - 1;    // -1 ～ +1 に正規化されたx座標
+      // mouseY = -(mouseY / window.innerHeight) * 2 + 1;    // -1 ～ +1 に正規化されたy座標
+      // var pos = new THREE.Vector3(mouseX, mouseY, 1);     // マウスベクトル
+      // pos.unproject(camera);                              // スクリーン座標系をカメラ座標系に変換
+      // // レイキャスタを作成（始点, 向きのベクトル）
+      // var ray = new THREE.Raycaster(camera.position, pos.sub(camera.position).normalize());
+      // var obj = ray.intersectObjects(scene.children, true);   // レイと交差したオブジェクトの取得
+      // console.log(scene.children);
+      // if(obj.length > 0) {                                // 交差したオブジェクトがあれば
+      //   picked(obj[0].object.name);                       // ピックされた対象に応じた処理を実行
+      // }
   
       this.el.setAttribute("raycaster", rayCasterConfig);
       if (evt.type === "touchmove") {

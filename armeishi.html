@@ -14,29 +14,29 @@
           <video id="my-video" src="img/ar-img/demo_mov_light.mp4" crossorigin="anonymous" playsinline webkit-playsinline></video>
           <!-- <img id="skyTexture" src="mg/ar-img/ore.png" /> -->
       </a-assets>
-      <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-box" registerevents>
+      <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-plane" registerevents>
         <!-- <a-plane rotation="-90 0 0" color="#CCC" height="2" width="2"></a-plane> -->
 
         <a-entity position="0 0 0" rotation="0 0 0">
           <a-plane  height="1" width="1.7" position="0 0 .1" rotation="0 0 0" scale="1 1 1" material="transparent: true; opacity: 0;" render-order=-2></a-plane>
           <!-- <a-sphere position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" material="transparent: true; depthTest: false;"></a-sphere> -->
-          <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="-.3 0 0" rotation="0 0 0" scale="1 1 1" material="transparent: true;" color-randomizer
+          <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="-.3 0 0" rotation="0 0 0" scale="1 1 1" material="transparent: true;"
 
             animation="property: position; to: 1.3 0 0; dur: 700; easing: easeInOutQuad; delay: 1000; enabled: false;">
             <a-text value="Kengo\n Ozawa" align="center" position=".8 .02 0" scale=".8 .8 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
           </a-plane>
-          <a-plane class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video; transparent: true;"
+          <a-plane class="lazystart my-video" height=".9" width="1.6" position="0 0 0" rotation="0 0 0" material="src: #my-video; transparent: true;" open-link
             animation="property: position; to: 0 -1 0; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"></a-plane>
 
-          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 .2 -.05" rotation="0 0 0" material="depthTest: true; transparent: true;" color-randomizer
+          <a-plane class="lazystart" id="website" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 .2 -.05" rotation="0 0 0" material="depthTest: true; transparent: true;" open-link
             animation="property: position; to: 0 -.8 -.05; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
             animation__2="property: position; from: 0 -.80 -.05; to: 1.70 -.8 -.05; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
-            <a-text value="Website" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt" render-order=-1 color-randomizer></a-text>
+            <a-text value="Website" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt" render-order=-1></a-text>
           </a-plane>
-          <a-plane class="lazystart" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 -.2 -.05" rotation="0 0 0" material="depthTest: true; transparent: true;" color-randomizer
+          <a-plane class="lazystart" id="twitter" src="img/ar-img/transparent-test.png" height=".3" width="1.3" position="0 -.2 -.05" rotation="0 0 0" material="depthTest: true; transparent: true;" open-link
             animation="property: position; to: 0 -1.2 -.05; dur: 700; easing: easeInOutQuad; delay: 2000; enabled: false;"
             animation__2="property: position; from: 0 -1.20 -.05; to: 1.70 -1.2 -.05; dur: 700; easing: easeInOutQuad; delay: 3000; enabled: false;">
-            <a-text value="Twitter" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt" render-order=-1 color-randomizer></a-text>
+            <a-text value="Twitter" align="center" position="0 .04 0" scale=".65 .65 1" color="black" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt" render-order=-1></a-text>
           </a-plane>
 
           <a-plane class="lazystart" src="img/ar-img/email.png" height=".3" width=".3" position="-.6 -1.7 0" rotation="0 0 0" material="opacity: 0; transparent: true;"
@@ -45,7 +45,7 @@
           <a-plane class="lazystart" src="img/ar-img/phone-call.png" height=".3" width=".3" position=".2 -1.7 0" rotation="0 0 0" material="opacity: 0; transparent: true;"
             animation="property: rotation; to: 0 360 0; dur: 700; easing: easeInOutQuad; delay: 4000; enabled: false;"
             animation__2="property: material.opacity; to: 1.0; dur: 700; delay: 4000; enabled: false;"></a-plane>
-          <a-plane class="lazystart" src="img/ar-img/github-logo.png" height=".3" width=".3" position="1.0 -1.7 0" rotation="0 0 0" material="opacity: 0; transparent: true;"
+          <a-plane class="lazystart" id="github" src="img/ar-img/github-logo.png" height=".3" width=".3" position="1.0 -1.7 0" rotation="0 0 0" material="opacity: 0; transparent: true;" open-link
             animation="property: rotation; to: 0 360 0; dur: 700; easing: easeInOutQuad; delay: 4000; enabled: false;"
             animation__2="property: material.opacity; to: 1.0; dur: 700; delay: 4000; enabled: false;"></a-plane>
           <a-plane class="lazystart" src="img/ar-img/chat.png" height=".3" width=".3" position="1.8 -1.7 0" rotation="0 0 0" material="opacity: 0; transparent: true;"
@@ -53,7 +53,7 @@
             animation__2="property: material.opacity; to: 1.0; dur: 700; delay: 4000; enabled: false;"></a-plane>
         </a-entity>
 
-        <a-box position="0 0.5 0" color-randomizer></a-box>
+        <!-- <a-plane position="0 0.5 0" color-randomizer></a-plane> -->
       </a-marker>
       <!-- <a-entity cursor="rayOrigin: mouse" raycaster="objects: a-box">
         <a-box position="1 1 -9" color-randomizer></a-box>
@@ -68,7 +68,7 @@
     document.addEventListener("click", function(){
        // videoEl.pause();
       videoEl.play();
-      console.log("videoEl : ", videoEl);
+      // console.log("videoEl : ", videoEl);
     });
   </script>
   </html>

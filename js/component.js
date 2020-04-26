@@ -8,6 +8,27 @@ AFRAME.registerComponent('color-randomizer', {
     }
 });
 
+AFRAME.registerComponent('open-link', {
+  init: function(){
+    var el = this.el;
+    el.addEventListener('click', (e) => {
+      console.log(el.id);
+      switch(el.id) {
+        case 'website':
+          window.location.href = 'https://zawazawagh.github.io/zawazawa/';
+          break;
+        case 'twitter':
+          window.location.href = 'https://twitter.com/zawazawatw';
+          break;
+        case 'github':
+          window.location.href = 'https://github.com/zawazawagh';
+        default:
+          console.log("no content");
+      }
+    });
+  }
+})
+
 AFRAME.registerComponent('registerevents', {
   init: function () {
     var marker = this.el;
