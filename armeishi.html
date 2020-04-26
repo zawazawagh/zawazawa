@@ -53,7 +53,7 @@
             animation__2="property: material.opacity; to: 1.0; dur: 700; delay: 4000; enabled: false;"></a-plane>
         </a-entity>
 
-        <!-- <a-box position="0 0.5 0" color-randomizer></a-box> -->
+        <a-box position="0 0.5 0" color-randomizer></a-box>
       </a-marker>
       <!-- <a-entity cursor="rayOrigin: mouse" raycaster="objects: a-box">
         <a-box position="1 1 -9" color-randomizer></a-box>
@@ -64,9 +64,7 @@
   <script src="js/cursor.js" defer></script>
   <script>
     var videoEl = document.querySelector('.my-video');
-    // videoEl.pause();
-    videoEl.play();
-    console.log("videoEl : ", videoEl);
+    videoEl.pause();
     document.addEventListener("click", function(){
        // videoEl.pause();
       videoEl.play();
