@@ -89,19 +89,47 @@ header .title a, side-menu .side-menu a{
   margin-left: 5px;
 }
 
-.profile {
-	display: inline-flex;
+@media screen and (min-width: 700px){
+  .profile {
+    display: inline-flex;
+  }
+  
+  .profile img {
+    width:100%;
+    max-width: 350px;
+    object-fit: contain;
+  }
+  
+  .profile .right-contents {
+    margin-left: 35px;
+  }
+
+  .profile .right-contents .name {
+    font-size: 20px;
+  }
 }
 
-.profile img {
-	width:100%;
-	max-width: 350px;
-  object-fit: contain;
+@media screen and (max-width: 700px){
+  .profile {
+    display: inline;
+  }
+  
+  .profile img {
+    width:100%;
+    max-width: 350px;
+    object-fit: contain;
+  }
+  
+  .profile .right-contents {
+    margin-left: 35px;
+  }
+
+  .profile .right-contents .name {
+    font-size: 20px;
+  }
 }
 
-.profile .right-contents {
-  margin-left: 35px;
-}
+
 
 .works {
 	position: relative;
@@ -186,6 +214,7 @@ footer {
 	margin-bottom: 10px;
 }
 
+/* スマホ */
 @media screen and (max-width: 500px){
 	body {
 		text-align:center;
