@@ -25,7 +25,8 @@
       Author: Mythomen <https://vimeo.com/mythomen>
       URL:    https://vimeo.com/147309712
       -->
-      <a-entity material="shader: flat; src: #videoParis"
+      <a-entity id="myvideo"
+                material="shader: flat; src: #videoParis"
                 geometry="primitive: plane; width: 160; height: 90;"
                 position="0 60 -250"
                 rotation="0 35 0">
@@ -44,4 +45,13 @@
       </a-entity> -->
     </a-scene>
   </body>
+  <script>
+    var videoEl = document.querySelector('.myvideo');
+    videoEl.pause();
+    document.addEventListener("click", function(){
+       // videoEl.pause();
+      videoEl.play();
+      console.log("touch and play video");
+    });
+  </script>
 </html>
