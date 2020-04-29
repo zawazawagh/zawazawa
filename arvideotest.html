@@ -4,7 +4,7 @@
 <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>1</title>
+    <title>2</title>
     <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
@@ -29,15 +29,15 @@
             }
         });
 
-        function refrespage() {
-            location.reload();
-        }
+        // function refrespage() {
+        //     location.reload();
+        // }
 
-        function playvid() {
-            // console.log("play");
-            vid.play();
-            // vid.pause();
-        }
+        // function playvid() {
+        //     // console.log("play");
+        //     vid.play();
+        //     // vid.pause();
+        // }
     </script>
     <!-- IF YOU WANT TO PLAY ALPHA VIDEO THEN IT SHOULD BE IN WEBM FORMAT ........ 
     FOR NORMAL VIDEO - MP4 or OGG -->
@@ -57,11 +57,10 @@
         <!-- <a-plane position='0 0.1 0' rotation="-90 0 0" material='transparent:true;src:#vid' controls></a-plane> -->
         <a-entity camera></a-entity>
     </a-scene>
-    <div class="footer">
+    <!-- <div class="footer">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left">
                 <div class="onebleft">
-                    <!-- <button onclick="vid.play()" class="btn btnskips">Play (CHROME)</button> -->
                     <button onclick="playvid()" class="btn btnskips">Play (CHROME)</button>
                 </div>
             </div>
@@ -71,7 +70,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </body>
 <script>
