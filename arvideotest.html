@@ -5,13 +5,14 @@
 <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>6</title>
+    <title>7</title>
     <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/component.js"></script>
     <script>
+        var isPlaying = false;
         AFRAME.registerComponent('vidhandler', {
             init: function() {
                 this.toggle = false;
@@ -26,6 +27,7 @@
                     }
                 } else {
                     this.toggle = false;
+                    isPlaying = false;
                     this.vid.pause();
                 }
             }
@@ -36,9 +38,13 @@
         }
 
         function playvid() {
-            // console.log("play");
-            vid.play();
-            // vid.pause();
+            if (isPlaying){
+                vid.play();
+                isPlaying = true;
+            } else {
+                vid.stop();
+                isPlaying = false;
+            }
         }
     </script>
 </head>
@@ -49,7 +55,7 @@
             <video id="vid" src="img/ar-img/demo_mov_light.mp4" crossorigin webkit-playsinline playsinline controls></video>
         </a-assets>
         <a-marker id="memarker" preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-plane" registerevents vidhandler>
-            <a-plane position='0 0.1 0' rotation="0 0 0" material='transparent:true;src:#vid' controls></a-plane>
+            <a-plane position='0 0.1 0' rotation="-90 0 0" material='transparent:true;src:#vid' controls></a-plane>
         </a-marker>
         <!-- <a-plane position='0 0.1 0' rotation="-90 0 0" material='transparent:true;src:#vid' controls></a-plane> -->
         <a-entity camera></a-entity>
@@ -59,7 +65,7 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left">
                 <div class="onebleft">
                     <!-- <button onclick="vid.play()" class="btn btnskips">Play (CHROME)</button> -->
-                    <button onclick="playvid()" class="btn btnskips">Play (CHROME)</button>
+                    <button id="btn" class="btn btnskips">Play (CHROME)</button>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
@@ -78,6 +84,15 @@
     //     console.log("play");
     //     vid.play();
     // };
+    // var btn = document.getElementById('btn');
+    // btn.addEventListener('click', function() {
+    //     window.confirm('クリックされました！');
+    //     playvid();
+    // })
+    
+    if (window.confirm("Play Video?")) {
+        playvid();
+    }
 </script>
 <style>
     .footer {
