@@ -1,5 +1,5 @@
 <html>
-  <title>6</title>
+  <title>7</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -13,7 +13,7 @@
       <a-assets>
           <!-- <video id="my-video" src="img/ar-img/demo_mov_light.mp4" autoplay="true" crossorigin="anonymous" playsinline webkit-playsinline></video> -->
           <video preload="auto" id="vid" poster="img/ar-img/ore.png" response-type="arraybuffer" loop="false" muted crossorigin webkit-playsinline playsinline >
-            <source  src="img/ar-img/demo_mov_light.mp4">
+            <source src="img/ar-img/demo_mov_light.mp4">
             <img src="img/ar-img/ore.png">
         </video>
           <!-- <img id="skyTexture" src="mg/ar-img/ore.png" /> -->
@@ -21,7 +21,7 @@
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-plane" registerevents vidhandler>
         <!-- <a-plane rotation="-90 0 0" color="#CCC" height="2" width="2"></a-plane> -->
 
-        <a-entity position="0 0 0" rotation="0 0 0">
+        <a-entity position="0 0 0" rotation="-90 0 0">
           <a-plane  height="1" width="1.7" position="0 0 .1" rotation="0 0 0" scale="1 1 1" material="transparent: true; opacity: 0;" render-order=-2></a-plane>
           <!-- <a-sphere position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" material="transparent: true; depthTest: false;"></a-sphere> -->
           <a-plane class="lazystart" src="img/ar-img/ore.png" height=".8" width=".8" position="-.3 0 0" rotation="0 0 0" scale="1 1 1" material="transparent: true;"

@@ -50,3 +50,22 @@ AFRAME.registerComponent('registerevents', {
     });
   }
 });
+
+AFRAME.registerComponent('vidhandler', {
+  init: function() {
+      this.toggle = false;
+      this.vid = document.querySelector("#vid");
+      this.vid.play();
+  },
+  tick: function() {
+      if (this.el.object3D.visible == true) {
+          if (!this.toggle) {
+              this.toggle = true;
+              this.vid.play();
+          }
+      } else {
+          this.toggle = false;
+          this.vid.pause();
+      }
+  }
+});
