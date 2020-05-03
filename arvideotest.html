@@ -5,7 +5,7 @@
 <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>9</title>
+    <title>10</title>
     <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
@@ -53,10 +53,10 @@
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
         <a-assets>
-            <video id="vid" src="img/ar-img/demo_mov_light.mp4" crossorigin webkit-playsinline playsinline controls></video>
+            <video id="vid" src="img/ar-img/demo_mov_light.mp4" muted crossorigin webkit-playsinline playsinline controls></video>
         </a-assets>
         <a-marker id="memarker" preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-plane" registerevents vidhandler>
-            <a-plane position='0 0.1 0' rotation="-90 0 0" material='transparent:true;src:#vid' controls></a-plane>
+            <a-plane id="myvideo" position='0 0.1 0' rotation="-90 0 0" material='transparent:true;src:#vid' controls></a-plane>
         </a-marker>
         <!-- <a-plane position='0 0.1 0' rotation="-90 0 0" material='transparent:true;src:#vid' controls></a-plane> -->
         <a-entity camera></a-entity>
@@ -85,15 +85,12 @@
     //     console.log("play");
     //     vid.play();
     // };
-    // var btn = document.getElementById('btn');
-    // btn.addEventListener('click', function() {
-    //     window.confirm('クリックされました！');
-    //     playvid();
-    // })
+    var video = document.getElementById('myvideo');
+    video.play();
     
-    if (window.confirm("Play Video?")) {
-        playvid();
-    }
+    // if (window.confirm("Play Video?")) {
+    //     playvid();
+    // }
 </script>
 <style>
     .footer {
