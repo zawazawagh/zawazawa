@@ -1,12 +1,12 @@
 <html>
-  <title>7</title>
+  <title>v1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
   <script src="js/component.js"></script>
-
+  <link rel="stylesheet" href="css/main.css">
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <!-- a-assetsの中でvideoでautoplay:true;を用いるとmarkerの座標が原点でなくなり、オブジェクトがスマホの角度とスクリーン座標の影響を受け、タッチスクロールによる回転が効き始めてしまう -->
@@ -64,15 +64,7 @@
       </a-entity> -->
       <a-entity camera></a-entity>
     </a-scene>
+    <button id="btn" onclick="soundOn()" class="soundbtn">Play (CHROME)</button>
   </body>
   <script src="js/cursor.js" defer></script>
-  <script>
-    // var videoEl = document.querySelector('.my-video');
-    // videoEl.pause();
-    // document.addEventListener("click", function(){
-    //    // videoEl.pause();
-    //   videoEl.play();
-    //   // console.log("touch and play video");
-    // });
-  </script>
   </html>
