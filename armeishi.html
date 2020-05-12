@@ -6,7 +6,15 @@
   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
   <script src="js/component.js"></script>
-  <link rel="stylesheet" href="css/main.css">
+  <style type="text/css">
+  /* used for ar action */
+  .soundbtn {
+    z-index: 900000000000;
+    position: fixed;
+    bottom: 0px;
+    margin-left: 50px;
+  }
+  </style>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <!-- a-assetsの中でvideoでautoplay:true;を用いるとmarkerの座標が原点でなくなり、オブジェクトがスマホの角度とスクリーン座標の影響を受け、タッチスクロールによる回転が効き始めてしまう -->
@@ -67,4 +75,11 @@
     <button id="btn" onclick="soundOn()" class="soundbtn">Play (CHROME)</button>
   </body>
   <script src="js/cursor.js" defer></script>
+  <script>
+    function soundOn() {
+      var video = document.querySelector("#vid");
+      console.log(video);
+      video.muted = !video.muted;
+    }
+  </script>
   </html>

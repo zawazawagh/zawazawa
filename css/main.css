@@ -464,12 +464,3 @@ button {
 .slide .slick-now {
 	opacity: 1;
 }
-
-
-/* used for ar action */
-.soundbtn {
-  z-index: 900000000000;
-  position: fixed;
-  bottom: 0px;
-  margin-left: 50px;
-}
