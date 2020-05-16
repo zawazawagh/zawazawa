@@ -1,5 +1,5 @@
 <html>
-  <title>1</title>
+  <title>v2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -16,18 +16,17 @@
   }
   </style>
   <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
+    <a-scene embedded arjs="enabled: false">
       <a-assets>
-        <video preload="auto" id="vid" poster="img/ar-img/ore.png" response-type="arraybuffer" loop="false" muted crossorigin webkit-playsinline playsinline >
-            <source src="img/ar-img/demo_mov_light.mp4">
-            <img src="img/ar-img/ore.png">
+        <video preload="auto" id="vid" poster="img/ar-img/ore.png" src="img/ar-img/demo_mov_light.mp4" response-type="arraybuffer" loop="false" muted crossorigin webkit-playsinline playsinline >
+            <!-- <source src="img/ar-img/demo_mov_light.mp4"> -->
         </video>
         <a-asset-item id="zawazawa3d" src="3dobj/zawazawatext.glb"></a-asset-item>
       </a-assets>
       <a-marker preset="hiro" cursor="rayOrigin: mouse" raycaster="objects: a-plane" registerevents vidhandler>
 
         <a-entity position="0 0 0" rotation="-90 0 0">
-          <a-entity class="lazystart" gltf-model="3dobj/zawazawatext.glb" scale="0 0 0" position="0 0 1" rotation="90 0 0"
+          <a-entity class="lazystart" gltf-model="#zawazawa3d" scale="0 0 0" position="0 0 1" rotation="90 0 0"
             animation="property: scale; from: 0 0 0; to: 1 1 1; easing: easeInOutElastic; dur: 1400; enabled: false;"
             animation__2="property: rotation; from: 90 0 0; to: 90 360 0; easing: linear; dur: 2500; loop: true; delay: 1300; enabled: false;">
           </a-entity>
@@ -63,7 +62,7 @@
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
-    <button id="btn" onclick="soundOn()" class="soundbtn">Play (CHROME)</button>
+    <button id="btn" onclick="soundOn()" class="soundbtn">Sound On/Off</button>
   </body>
   <script src="js/cursor.js" defer></script>
   <script>

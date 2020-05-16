@@ -13,13 +13,16 @@ var bind = function bind(fn, ctx /* , arg1, arg2 */) {
   /* * * * * * * * * * * * * * * * * * * * * *
      wait until the cursor is ready and accessible
   * * * * * * * * * * * * * * * * * * * * * * */
+
+  document.querySelector("[cursor]").components.cursor.flushToDOM();
+
   let marker = document.querySelector("[cursor]");
-  console.log(marker.hasLoaded);
   
   /* * * * * * * * * * * * * * * * * * * * * *
     replace the curosr.onMouseMove function
   * * * * * * * * * * * * * * * * * * * * * * */
   let cursorComponent = marker.components.cursor;
+  console.log(marker.components);
   cursorComponent.onMouseMove = (function() {
     console.warn("Cursor.onMouseMove is modified");
     var direction = new THREE.Vector3();
