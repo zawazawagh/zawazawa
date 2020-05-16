@@ -13,9 +13,6 @@ var bind = function bind(fn, ctx /* , arg1, arg2 */) {
   /* * * * * * * * * * * * * * * * * * * * * *
      wait until the cursor is ready and accessible
   * * * * * * * * * * * * * * * * * * * * * * */
-
-  document.querySelector("[cursor]").components.cursor.flushToDOM();
-
   let marker = document.querySelector("[cursor]");
   
   /* * * * * * * * * * * * * * * * * * * * * *

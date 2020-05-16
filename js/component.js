@@ -42,7 +42,6 @@ AFRAME.registerComponent('registerevents', {
         el.setAttribute("animation__2", {enabled : true});
       })
       var videoEl = document.querySelector('.my-video');
-      videoEl.play();
     });
     marker.addEventListener('markerLost', function() {
       var markerId = marker.id;
@@ -51,21 +50,21 @@ AFRAME.registerComponent('registerevents', {
   }
 });
 
-AFRAME.registerComponent('vidhandler', {
-  init: function() {
-      this.toggle = false;
-      this.vid = document.querySelector("#vid");
-      this.vid.play();
-  },
-  tick: function() {
-      if (this.el.object3D.visible == true) {
-          if (!this.toggle) {
-              this.toggle = true;
-              this.vid.play();
-          }
-      } else {
-          this.toggle = false;
-          this.vid.pause();
-      }
-  }
-});
+// AFRAME.registerComponent('vidhandler', {
+//   init: function() {
+//       this.toggle = false;
+//       this.vid = document.querySelector("#vid");
+//       this.vid.play();
+//   },
+//   tick: function() {
+//       if (this.el.object3D.visible == true) {
+//           if (!this.toggle) {
+//               this.toggle = true;
+//               this.vid.play();
+//           }
+//       } else {
+//           this.toggle = false;
+//           this.vid.pause();
+//       }
+//   }
+// });
