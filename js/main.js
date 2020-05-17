@@ -1,4 +1,4 @@
-jQuery(function($) {
+$(function($) {
     $(window).scroll(function() {
         var offset = $(this).scrollTop() / 10;
         var height = screen.height;
